@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="5dp"
+    app:cardBackgroundColor="@color/white"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/empty_bin_icon" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:numStars="5"
+                    android:scaleX=".5"
+                    style="?android:attr/ratingBarStyleIndicator"
+                    android:scaleY=".5"
+                    android:transformPivotX="0dp"
+                    android:transformPivotY="30dp"
+                    android:rating="1" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="25dp"
+            android:text="10.6"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimary"
+            />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Super Super"
+                android:layout_weight="1"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                android:layout_marginTop="5dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="888 Reviews"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                android:layout_weight="0.5"
+                android:layout_marginTop="5dp"
+                />
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wellness title label"
+            android:textColor="@color/black"
+            android:layout_marginStart="5dp"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yoga,cycle"
+            android:textColor="@color/grey_900"
+            android:layout_marginStart="5dp"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Make a Symbolic BreakPoint at UIView Alert For UnSatisfiable constraints to catch tis in debugger"
+            android:textColor="@color/grey_500"
+            android:layout_marginStart="5dp"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Booking 5 times in last 12 hours"
+             android:textColor="@color/red_500"
+            android:layout_marginStart="5dp"
+            android:textSize="12sp"
+            android:layout_marginTop="5dp"
+            />
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

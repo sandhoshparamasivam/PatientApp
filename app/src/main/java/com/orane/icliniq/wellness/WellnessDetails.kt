@@ -1,0 +1,51 @@
+package com.orane.icliniq.wellness
+
+import android.app.Activity
+import android.os.Build
+import android.os.Bundle
+import android.webkit.WebResourceError
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.orane.icliniq.R
+import kotlinx.android.synthetic.main.activity_wellness_details.*
+
+class WellnessDetails : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_wellness_details)
+        webView.webViewClient = MyWebViewClient(this)
+        toolbar.setNavigationOnClickListener {
+            finish()
+        }
+        val summary = "<p><meta charset='utf-8'></p><h2 class='wellness-title font-weight-bold mt-0 mr-3' style='box-sizing: border-box; margin-top: 0px !important; margin-bottom: 0.5rem; font-weight: 700 !important; line-height: 1.2; font-size: 2rem; margin-right: 1rem !important; color: rgb(63, 81, 181); font-family: lato; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: 0.4px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;'>Title of the Wellness <span style='font-size:70%;color:rgb(240, 130, 0);'>&starf;&starf;&starf;</span><span style='font-size:70%;color:rgb(240, 130, 0);'>&star;&star;</span></h2><p><meta charset='utf-8'><a style='box-sizing: border-box; color: rgb(0, 102, 255); text-decoration: none; background-color: rgb(255, 255, 255); transition: color 0.3s ease 0s, background-color 0.3s ease 0s; font-family: lato; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.4px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;'><span style='box-sizing: border-box; text-decoration: underline; color: rgb(33, 150, 243);'>Hospital &nbsp;Name</span></a><a style='box-sizing: border-box; color: rgb(0, 102, 255); text-decoration: none; background-color: rgb(255, 255, 255); transition: color 0.3s ease 0s, background-color 0.3s ease 0s; font-family: lato; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.4px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;'><span style='box-sizing: border-box; text-decoration: underline; color: rgb(33, 150, 243);'>Doctor &nbsp;Name</span></a></p><p><span style='box-sizing: border-box; color: rgb(33, 150, 243); text-decoration: underline; background-color: rgb(255, 255, 255); transition: color 0.3s ease 0s, background-color 0.3s ease 0s; font-family: lato; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.4px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a style='box-sizing: border-box; color: rgb(0, 102, 255); text-decoration: none; background-color: rgb(255, 255, 255); transition: color 0.3s ease 0s, background-color 0.3s ease 0s; font-family: lato; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.4px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;'><meta charset='utf-8'><span style='color: rgb(45, 45, 50); font-family: lato; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.4px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</span></a></span></p><p><br></p><p><meta charset='utf-8'></p><div class='wellness-program-reason mb-5' style='box-sizing: border-box; margin-bottom: 3rem !important; color: rgb(45, 45, 50); font-family: lato; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.4px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;'><h3 class='h5 font-xs-1rem font-weight-bold mb-2' style='box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem !important; font-weight: 700 !important; line-height: 1.2; font-size: 1.25rem;'>4 Reason You Can Choose Yoga Wellness Program</h3><div class='reason-wellness-points p-3' style='box-sizing: border-box; padding: 1rem !important; background-color: rgb(216, 242, 247); border-radius: 5px; font-size: 20px; color: rgb(63, 81, 181); font-weight: 700;'><span style='box-sizing: border-box;'>Peace</span>, <span style='box-sizing: border-box;'>Relax</span></div></div><div class='wellness-program-reason mb-5' style='box-sizing: border-box; margin-bottom: 3rem !important; color: rgb(45, 45, 50); font-family: lato; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.4px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;'><h3 class='h5 font-xs-1rem font-weight-bold mb-2' style='box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem !important; font-weight: 700 !important; line-height: 1.2; font-size: 1.25rem;'>Wellness Rules</h3><ul class='xs-list list-points mb-4 pl-4' style='box-sizing: border-box; margin: 0px; padding: 0px; list-style: none; font-size: 17px;'><li style='box-sizing: border-box; display: flex; align-items: start; padding-bottom: 5px;'><i class='fa fa-certificate' style='box-sizing: border-box; -webkit-font-smoothing: antialiased; display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; font-family: &quot;font awesome 5 free&quot;; font-weight: 700; padding-right: 10px; color: rgb(12, 90, 219); position: relative; top: 4px; font-size: 14px;'></i>*Dedication</li><li style='box-sizing: border-box; display: flex; align-items: start; padding-bottom: 5px;'><i class='fa fa-certificate' style='box-sizing: border-box; -webkit-font-smoothing: antialiased; display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; font-family: &quot;font awesome 5 free&quot;; font-weight: 700; padding-right: 10px; color: rgb(12, 90, 219); position: relative; top: 4px; font-size: 14px;'></i>*Practice</li><li style='box-sizing: border-box; display: flex; align-items: start; padding-bottom: 5px;'><i class='fa fa-certificate' style='box-sizing: border-box; -webkit-font-smoothing: antialiased; display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; font-family: &quot;font awesome 5 free&quot;; font-weight: 700; padding-right: 10px; color: rgb(12, 90, 219); position: relative; top: 4px; font-size: 14px;'></i>*Involvement</li><li style='box-sizing: border-box; display: flex; align-items: start; padding-bottom: 5px;'><i class='fa fa-certificate' style='box-sizing: border-box; -webkit-font-smoothing: antialiased; display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; font-family: &quot;font awesome 5 free&quot;; font-weight: 700; padding-right: 10px; color: rgb(12, 90, 219); position: relative; top: 4px; font-size: 14px;'></i>*Joyfull</li></ul></div>"
+        webView.loadData(summary, "text/html", null)
+        val adapter = WellnessDetailsAdapter()
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager( this,LinearLayoutManager.HORIZONTAL,false)
+        recyclerView.adapter = adapter
+
+    }
+    class MyWebViewClient internal constructor(private val activity: Activity) : WebViewClient() {
+
+        @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+        override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+            val url: String = request?.url.toString();
+            view?.loadUrl(url)
+            return true
+        }
+
+        override fun shouldOverrideUrlLoading(webView: WebView, url: String): Boolean {
+            webView.loadUrl(url)
+            return true
+        }
+
+        override fun onReceivedError(view: WebView, request: WebResourceRequest, error: WebResourceError) {
+            Toast.makeText(activity, "Got Error! $error", Toast.LENGTH_SHORT).show()
+        }
+    }
+}

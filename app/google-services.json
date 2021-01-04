@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "565546128859",
+    "firebase_url": "https://patient-app-2a7f4.firebaseio.com",
+    "project_id": "patient-app-2a7f4",
+    "storage_bucket": "patient-app-2a7f4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565546128859:android:eeb25975899c224f5a83fe",
+        "android_client_info": {
+          "package_name": "com.orane.icliniq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565546128859-nbjmf2m7ojvdrhn2se1vrcjruhvoqmep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBsShPFw9cVf5iaSV2akU8Gh_oxZKtcWk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565546128859-nbjmf2m7ojvdrhn2se1vrcjruhvoqmep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
