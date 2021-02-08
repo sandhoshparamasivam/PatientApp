@@ -4,8 +4,15 @@
     android:layout_width="match_parent"
     android:id="@+id/splash"
     android:layout_height="match_parent"
-    android:background="@mipmap/splash"
+    android:gravity="center"
+    android:background="@mipmap/icliniq_bg"
     android:orientation="vertical">
-
+<ImageView
+    android:layout_width="250dp"
+    android:layout_height="100dp"
+    android:layout_gravity="center"
+    android:layout_margin="20dp"
+    android:src="@mipmap/logo1"
+    />
 
 </LinearLayout>

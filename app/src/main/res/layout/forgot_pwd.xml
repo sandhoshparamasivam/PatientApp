@@ -34,7 +34,6 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="25dp"
-                android:scaleType="centerCrop"
                 android:src="@mipmap/logo1" />
 
             <LinearLayout

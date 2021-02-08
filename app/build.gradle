@@ -175,5 +175,9 @@ dependencies {
 
     //glide for Images
     implementation 'com.github.bumptech.glide:glide:3.7.0'
-    
+
+    //color picker
+    implementation 'com.pes.materialcolorpicker:library:1.2.5'
+
+
 }

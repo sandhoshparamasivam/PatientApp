@@ -85,7 +85,6 @@
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="@dimen/imageview_height"
-            android:layout_gravity="center_vertical"
             android:background="@mipmap/docbg_small"
             android:gravity="center_vertical"
             android:orientation="vertical">
@@ -239,11 +238,10 @@
                 <TextView
                     android:id="@+id/btn_hotline"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:background="@drawable/button_border_white"
                     android:fontFamily="sans-serif"
                     android:gravity="center"
-
                     android:padding="10dp"
                     android:text="Chat with Doctor"
                     android:textAllCaps="false"
