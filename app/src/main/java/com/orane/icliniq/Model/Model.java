@@ -10,9 +10,9 @@ import java.io.File;
 
 public class Model {
 
-    public static String App_ver = "19.9.87";
-    public static String App_ver_slno = "120257";
-    public static String App_Rel = "12-DECEMBER-2020";
+    public static String App_ver = "19.9.88";
+    public static String App_ver_slno = "120258";
+    public static String App_Rel = "09-February-2021";
 
     //public static String font_name = "fonts/NotoSans-Regular.ttf";
     public static String font_name = "fonts/OpenSans-Regular.ttf";

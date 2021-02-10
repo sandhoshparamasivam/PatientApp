@@ -172,7 +172,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_mobno"
                         android:layout_marginTop="25dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -181,6 +182,7 @@
                             android:fontFamily="sans-serif"
                             android:gravity="center_horizontal"
                             android:padding="5dp"
+
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
                             android:text="Please wait. While reading OTP SMS Automatically..."

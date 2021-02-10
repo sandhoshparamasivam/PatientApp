@@ -450,7 +450,7 @@
                         <Button
                             android:id="@+id/btn_askfollup"
                             android:layout_width="wrap_content"
-                            android:layout_height="37dp"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:layout_gravity="center"
@@ -550,7 +550,7 @@
                         <Button
                             android:id="@+id/btn_icq50"
                             android:layout_width="wrap_content"
-                            android:layout_height="37dp"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:layout_gravity="center"

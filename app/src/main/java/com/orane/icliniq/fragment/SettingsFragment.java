@@ -33,6 +33,7 @@ import com.orane.icliniq.Patient_Profile_Activity;
 import com.orane.icliniq.R;
 import com.orane.icliniq.Referal_Activity;
 import com.orane.icliniq.Terms_WebViewActivity;
+//import com.orane.icliniq.ThemeActivity;
 import com.orane.icliniq.Video_WebViewActivity;
 import com.orane.icliniq.WalletTransactions;
 import com.orane.icliniq.WebViewActivity;
@@ -75,7 +76,7 @@ public class SettingsFragment extends Fragment {
     String lang_name, lang_val;
     View view;
     Typeface font_reg, font_bold;
-    LinearLayout suggest_layout, refer_layout;
+    LinearLayout suggest_layout, refer_layout,themeChange;
 
     public static SettingsFragment newInstance(int pageIndex) {
         SettingsFragment homeFragment = new SettingsFragment();
@@ -115,7 +116,7 @@ public class SettingsFragment extends Fragment {
         spinner_lang = view.findViewById(R.id.spinner_lang);
         tv_pname = view.findViewById(R.id.tv_pname);
         tv_emailid = view.findViewById(R.id.tv_emailid);
-
+        themeChange=view.findViewById(R.id.themeChange);
         font_reg = Typeface.createFromAsset(getActivity().getAssets(), Model.font_name);
         font_bold = Typeface.createFromAsset(getActivity().getAssets(), Model.font_name_bold);
 
@@ -161,6 +162,14 @@ public class SettingsFragment extends Fragment {
             e.printStackTrace();
         }
 
+//        themeChange.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(getActivity(), ThemeActivity.class);
+//                startActivity(i);
+//
+//            }
+//        });
         suggest_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -641,7 +641,6 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:elevation="20dp"
                         android:gravity="center_horizontal"
                         android:orientation="vertical"
                         android:padding="10dp">
@@ -649,7 +648,7 @@
                         <Button
                             android:id="@+id/btn_submit"
                             android:layout_width="wrap_content"
-                            android:layout_height="37dp"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:layout_gravity="center"
@@ -745,7 +744,7 @@
                         <Button
                             android:id="@+id/btn_icq50"
                             android:layout_width="wrap_content"
-                            android:layout_height="37dp"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
                             android:layout_gravity="center"
