@@ -32,10 +32,11 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="16dp"
-            android:src="@mipmap/q_logo_1"
-            app:backgroundTint="@color/white"
+            android:src="@mipmap/logo"
+            app:backgroundTint="#1645a4"
             app:borderWidth="1dp"
+            app:maxImageSize="40dp"
             app:elevation="9dp" />
-
+<!--        app:backgroundTint="#1645a4"-->
     </RelativeLayout>
 </layout>
