@@ -504,7 +504,6 @@ public class SpecialityListActivity extends AppCompatActivity {
                 //Toast.makeText(getApplicationContext(), ((TextView) view).getText(), Toast.LENGTH_SHORT).show();
                 select_Speciality = tvspecname.getText().toString();
                 Model.select_specname = tvspecname.getText().toString();
-                Log.e("select_specname",select_Speciality+" ");
                 spec_val = spec_map.get(select_Speciality);
                 Model.select_spec_val = spec_map.get(select_Speciality);
 

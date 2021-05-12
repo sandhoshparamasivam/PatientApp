@@ -13,6 +13,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -148,7 +150,7 @@ public class Ask_FamilyProfile extends AppCompatActivity {
         qid = intent.getStringExtra("qid");
         query_txt = intent.getStringExtra("qid_text");
         Doc_id = intent.getStringExtra("Doc_id");
-
+        Log.e("Doc_id",Doc_id+" ");
         System.out.println("Get Intent qid-----" + qid);
         System.out.println("Get Intent qid_text-----" + qid_text);
         System.out.println("Get Intent Doc_id-----" + Doc_id);
@@ -1843,6 +1845,7 @@ public class Ask_FamilyProfile extends AppCompatActivity {
                     Intent intent = new Intent(Ask_FamilyProfile.this, AskQuery2.class);
                     intent.putExtra("qid", qid);
                     intent.putExtra("persona_id", persona_id_val);
+                    intent.putExtra("Doc_id", Doc_id);
                     intent.putExtra("finisher", new android.os.ResultReceiver(null) {
                         @Override
                         protected void onReceiveResult(int resultCode, Bundle resultData) {

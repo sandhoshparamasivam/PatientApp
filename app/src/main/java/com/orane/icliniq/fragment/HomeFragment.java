@@ -1337,12 +1337,13 @@ public class HomeFragment extends Fragment {
                     deals_layout.addView(recc_vi);
 
                 }
-
+                dialog.dismiss();
             } catch (Exception e) {
                 e.printStackTrace();
+                dialog.dismiss();
             }
 
-            dialog.cancel();
+            dialog.dismiss();
         }
     }
 }

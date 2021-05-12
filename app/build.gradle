@@ -20,8 +20,8 @@ android {
         applicationId "com.orane.icliniq"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 120259
-        versionName "19.9.89"
+        versionCode 120263
+        versionName "19.9.93"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
 
@@ -179,5 +179,8 @@ dependencies {
     //color picker
     implementation 'com.pes.materialcolorpicker:library:1.2.5'
 
+
+    //theme change
+    implementation 'com.turki-alkhateeb:materialcolorpicker:1.0.7'
 
 }

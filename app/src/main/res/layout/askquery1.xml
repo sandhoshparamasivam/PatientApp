@@ -413,7 +413,6 @@
                 android:id="@+id/edt_query"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
@@ -427,7 +426,21 @@
                 android:textColor="@color/mds_bluegrey_700"
                 android:textSize="15sp"
                 android:textStyle="normal" />
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-light"
+                android:text="Minimum 160 Char(s) Left"
+                android:id="@+id/txtCount"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="end"
+                android:textColor="@color/red_900"
+                android:textSize="12sp"
+                android:textStyle="normal"
+               />
 
             <TextView
                 android:layout_width="match_parent"

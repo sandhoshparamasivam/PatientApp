@@ -11,8 +11,11 @@ import android.graphics.drawable.ScaleDrawable;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.Html;
+import android.text.InputFilter;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -96,7 +99,7 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
     Spinner spinner_height, spinner_weight, spinner_title;
     RadioButton radio_male, radio_thirdgender, radio_female;
     TextView tvdocname, weight_title, height_title, tvqfee, tvtit, tvfquery, tvprice;
-    TextView tv_tooltit, tv_fee11, tv_fee1, tv_name_title, relation_title, tv_spec_name;
+    TextView tv_tooltit,txtCount, tv_fee11, tv_fee1, tv_name_title, relation_title, tv_spec_name;
     Button btn_submit;
     Integer per_id;
     Button btn_icq100, btn_icq50;
@@ -181,6 +184,8 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
         someone_scrollview = findViewById(R.id.someone_scrollview);
         tvqfee = findViewById(R.id.tvqfee);
         edt_query = findViewById(R.id.edt_query);
+        txtCount = findViewById(R.id.txtCount);
+        txtCount.setVisibility(View.GONE);
         //spinner_speciality = (Spinner) findViewById(R.id.spinner_speciality);
         tvprice = findViewById(R.id.tvprice);
         btn_submit = findViewById(R.id.btn_submit);
@@ -230,6 +235,38 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
         hashmap_height();
         hashmap_weight();
 
+//        edt_query.setFilters(new InputFilter[] {new InputFilter.LengthFilter(160)});
+
+//        edt_query.addTextChangedListener(new TextWatcher() {
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//                if (edt_query.getText().toString().length()<160){
+//                    txtCount.setVisibility(View.VISIBLE);
+//                    String value="Minimum 160 Char(s) /";
+//                    int tot=160 - s.toString().length();
+//                    txtCount.setText(value+tot+" Left");
+//                }else if (edt_query.getText().toString().length()>=160){
+//                    txtCount.setVisibility(View.GONE);
+//                }
+//
+//
+//            }
+//
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count,
+//                                          int after) {
+//                // TODO Auto-generated method stub
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//                // TODO Auto-generated method stub
+//
+//            }
+//        });
         //-----------------get fee-------------------------------------------
         try {
             json_getfee = new JSONObject();
@@ -343,8 +380,9 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
                                     json.put("doctor_id", "0");
                                     json.put("pqid", "0");
                                     json.put("qid", "0");
-
+                                    json.put("fp_id", radio_id);
                                     inf_for = "icq100";
+                                    Log.e("icq100",json+" ");
                                     new JSONPostQuery().execute(json);
 
                                     //------------ Google firebase Analitics-----------------------------------------------
@@ -418,8 +456,9 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
                                         json.put("doctor_id", "0");
                                         json.put("pqid", "0");
                                         json.put("qid", "0");
-
+                                        json.put("fp_id", radio_id);
                                         inf_for = "icq50";
+                                        Log.e("icq50",json+" ");
                                         new JSONPostQuery().execute(json);
 
                                         //------------ Google firebase Analitics-----------------------------------------------
@@ -640,7 +679,7 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
                                     String query_str = edt_query.getText().toString();
                                     System.out.println("query_str-----" + query_str);
 
-                                    if ((query_str.length()) > 0) {
+                                    if ((query_str.length()) > 160) {
 
     /*                              String spintext = spinner_speciality.getSelectedItem().toString();
                                     spec_val = spec_map.get(spintext);*/
@@ -667,7 +706,7 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
                                         json.put("fp_id", radio_id);
 
                                         System.out.println("json-------------------" + json.toString());
-
+                                        Log.e("icq50",json+" ");
                                         new JSONPostQuery().execute(json);
 
                                         //------------ Google firebase Analitics--------------------
@@ -679,9 +718,21 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
                                         Model.mFirebaseAnalytics.logEvent("AskQuery1_Post_Query", params);
                                         //------------ Google firebase Analitics--------------------
 
-                                    } else
-                                        edt_query.setError("Please enter your query");
+                                    } else{
 
+                                            final MaterialDialog alert = new MaterialDialog(AskQuery1.this);
+                                            alert.setTitle("Invalid Query");
+                                            alert.setMessage("Please Enter minimum 160 Char(s)");
+                                            alert.setCanceledOnTouchOutside(false);
+                                            alert.setPositiveButton("ok", new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                alert.dismiss();
+                                                  }
+                                            });
+
+                                            alert.show();
+                                        }
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }

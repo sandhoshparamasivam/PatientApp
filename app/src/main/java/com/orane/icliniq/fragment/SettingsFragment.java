@@ -34,6 +34,7 @@ import com.orane.icliniq.R;
 import com.orane.icliniq.Referal_Activity;
 import com.orane.icliniq.Terms_WebViewActivity;
 //import com.orane.icliniq.ThemeActivity;
+import com.orane.icliniq.ThemeActivity;
 import com.orane.icliniq.Video_WebViewActivity;
 import com.orane.icliniq.WalletTransactions;
 import com.orane.icliniq.WebViewActivity;
@@ -90,7 +91,6 @@ public class SettingsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.settings, container, false);
-
         suggest_layout = view.findViewById(R.id.suggest_layout);
         refer_layout = view.findViewById(R.id.refer_layout);
         wallet_layout = view.findViewById(R.id.wallet_layout);
@@ -162,14 +162,14 @@ public class SettingsFragment extends Fragment {
             e.printStackTrace();
         }
 
-//        themeChange.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(getActivity(), ThemeActivity.class);
-//                startActivity(i);
-//
-//            }
-//        });
+        themeChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), ThemeActivity.class);
+                startActivity(i);
+
+            }
+        });
         suggest_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -480,6 +480,7 @@ public class SettingsFragment extends Fragment {
                     logout_json_validate.put("reg_id", Model.device_token);
                     logout_json_validate.put("os_type", "1");
                     System.out.println("logout_json_validate----" + logout_json_validate.toString());
+                    alert.dismiss();
                     new JSON_logout().execute(logout_json_validate);
 
                     //--------------------------------------------------

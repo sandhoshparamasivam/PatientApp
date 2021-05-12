@@ -11,6 +11,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.widget.Toolbar;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -273,59 +274,63 @@ public class ConsultFragment extends ScrollViewFragment {
                         System.out.println("query_txt-----------" + query_txt);
                         System.out.println("Doc_id-----------" + Doc_id);
                         System.out.println("cons_type-----------" + cons_type);
+                        if (cons_type.equals("1") && query_txt.length()<160){
+                                alertBoxMethod();
+                        }else{
+                            if ((query_txt.length()) > 0) {
 
-                        if ((query_txt.length()) > 0) {
+                                if (cons_type.equals("1")) {
+                                    //post_query();
 
-                            if (cons_type.equals("1")) {
-                                //post_query();
-
-
-                                Intent intent = new Intent(getActivity(), Ask_FamilyProfile.class);
-                                intent.putExtra("qid", qid);
-                                intent.putExtra("qid_text", query_txt);
-                                intent.putExtra("Doc_id", Doc_id);
-                                intent.putExtra("finisher", new android.os.ResultReceiver(null) {
-                                    @Override
-                                    protected void onReceiveResult(int resultCode, Bundle resultData) {
-                                        getActivity().finish();
-                                    }
-                                });
-                                startActivityForResult(intent, 1);
-
-
-                            } else {
-
-                                Intent intent = new Intent(getActivity(), Doc_Consultation1.class);
-                                intent.putExtra("Query", query_txt);
-                                intent.putExtra("cons_type", cons_type);
-                                intent.putExtra("Doc_id", Doc_id);
-
-                                intent.putExtra("finisher", new android.os.ResultReceiver(null) {
-                                    @Override
-                                    protected void onReceiveResult(int resultCode, Bundle resultData) {
-                                        getActivity().finish();
-                                    }
-                                });
-                                startActivityForResult(intent, 1);
-                                Model.query_launch = "Doc_Consultation1";
+                                    Log.e("Doc_id in consult",Doc_id+" ");
+                                    Intent intent = new Intent(getActivity(), Ask_FamilyProfile.class);
+                                    intent.putExtra("qid", qid);
+                                    intent.putExtra("qid_text", query_txt);
+                                    intent.putExtra("Doc_id", Doc_id);
+                                    intent.putExtra("finisher", new android.os.ResultReceiver(null) {
+                                        @Override
+                                        protected void onReceiveResult(int resultCode, Bundle resultData) {
+                                            getActivity().finish();
+                                        }
+                                    });
+                                    startActivityForResult(intent, 1);
 
 
-                                //------------ Google firebase Analitics--------------------
-                                Model.mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
-                                Bundle params = new Bundle();
-                                params.putString("User", Model.id);
-                                params.putString("query", query_txt);
-                                params.putString("doctor_id", Doc_id);
-                                params.putString("cons_type", cons_type);
-                                Model.mFirebaseAnalytics.logEvent("Doctor_Profile_Post_Consultation", params);
-                                //------------ Google firebase Analitics--------------------
+                                } else {
+
+                                    Intent intent = new Intent(getActivity(), Doc_Consultation1.class);
+                                    intent.putExtra("Query", query_txt);
+                                    intent.putExtra("cons_type", cons_type);
+                                    intent.putExtra("Doc_id", Doc_id);
+
+                                    intent.putExtra("finisher", new android.os.ResultReceiver(null) {
+                                        @Override
+                                        protected void onReceiveResult(int resultCode, Bundle resultData) {
+                                            getActivity().finish();
+                                        }
+                                    });
+                                    startActivityForResult(intent, 1);
+                                    Model.query_launch = "Doc_Consultation1";
 
 
-                            }
+                                    //------------ Google firebase Analitics--------------------
+                                    Model.mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
+                                    Bundle params = new Bundle();
+                                    params.putString("User", Model.id);
+                                    params.putString("query", query_txt);
+                                    params.putString("doctor_id", Doc_id);
+                                    params.putString("cons_type", cons_type);
+                                    Model.mFirebaseAnalytics.logEvent("Doctor_Profile_Post_Consultation", params);
+                                    //------------ Google firebase Analitics--------------------
 
-                        } else
-                            edt_query.setError("Please enter your query");
+
+                                }
+
+                            } else
+                                edt_query.setError("Please enter your query");
                             edt_query.requestFocus();
+                        }
+
 
                     } else {
                         System.out.println("Log_Status---Zero-----------" + Log_Status);
@@ -339,6 +344,32 @@ public class ConsultFragment extends ScrollViewFragment {
 
 
         return view;
+    }
+
+    private void alertBoxMethod() {
+        final MaterialDialog alert = new MaterialDialog(getActivity());
+        alert.setTitle("Invalid Query");
+        alert.setMessage("Please Enter minimum 160 Char(s)");
+        alert.setCanceledOnTouchOutside(false);
+        alert.setPositiveButton("ok", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            alert.dismiss();
+              }
+        });
+//        alert.setNegativeButton("Signup", new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                ((android.os.ResultReceiver) getActivity().getIntent().getParcelableExtra("finisher")).send(1, new Bundle());
+//
+//                Intent i = new Intent(getActivity(), SignupActivity.class);
+//                startActivity(i);
+//                alert.dismiss();
+//                getActivity().finish();
+//            }
+//        });
+
+        alert.show();
     }
 
     public void post_query() {

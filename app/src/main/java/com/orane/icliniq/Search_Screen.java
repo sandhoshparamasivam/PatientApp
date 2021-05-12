@@ -393,8 +393,8 @@ public class Search_Screen extends BaseActivity implements ObservableScrollViewC
                     Toast.makeText(getApplicationContext(), "Please check your Internet Connection and try again", Toast.LENGTH_SHORT).show();
                 }
 
-                InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+//                InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+//                inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
 
             }
         });
@@ -410,64 +410,64 @@ public class Search_Screen extends BaseActivity implements ObservableScrollViewC
                     empty_layout.setVisibility(View.GONE);
                     progressBar_bottom.setVisibility(View.GONE);
                 } else {
-                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                    inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+//                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+//                    inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
                     finish();
                 }
             }
         });
 
-        edt_searchword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-
-                    //search_text = edt_searchword.getText().toString();
-
-                    try {
-                        search_text = URLEncoder.encode((edt_searchword.getText().toString()), "UTF-8");
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-
-                    System.out.println("search_text------------------" + search_text);
-
-                    //=========================================================
-                    Model.kiss.record("android.patient.Search");
-                    HashMap<String, String> properties = new HashMap<String, String>();
-                    properties.put("android.patient.Search_text", search_text);
-                    Model.kiss.set(properties);
-                    //----------------------------------------------------------------------------
-                    //----------- Flurry -------------------------------------------------
-                    Map<String, String> articleParams = new HashMap<String, String>();
-                    articleParams.put("android.patient.Search_text", search_text);
-                    FlurryAgent.logEvent("android.patient.Search", articleParams);
-                    //----------- Flurry -------------------------------------------------
-
-
-                    if (isInternetOn()) {
-
-                        pagination = true;
-
-                        //-----------------------------
-                        String search_url = Model.BASE_URL + "app/search?q=" + search_text + "&page=0";
-                        System.out.println("search_url------" + search_url);
-                        new MyTask_server().execute(search_url);
-                        //-----------------------------
-
-                        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-
-                    } else {
-                        //Toast.makeText(Search_Screen.this, "Internet is not connected", Toast.LENGTH_SHORT).show();
-                        Snackbar.make(v, "Internet is not connected", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-                    }
-
-                    return true;
-                }
-                return false;
-            }
-        });
+//        edt_searchword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//            @Override
+//            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+//                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+//
+//                    //search_text = edt_searchword.getText().toString();
+//
+//                    try {
+//                        search_text = URLEncoder.encode((edt_searchword.getText().toString()), "UTF-8");
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                    System.out.println("search_text------------------" + search_text);
+//
+//                    //=========================================================
+//                    Model.kiss.record("android.patient.Search");
+//                    HashMap<String, String> properties = new HashMap<String, String>();
+//                    properties.put("android.patient.Search_text", search_text);
+//                    Model.kiss.set(properties);
+//                    //----------------------------------------------------------------------------
+//                    //----------- Flurry -------------------------------------------------
+//                    Map<String, String> articleParams = new HashMap<String, String>();
+//                    articleParams.put("android.patient.Search_text", search_text);
+//                    FlurryAgent.logEvent("android.patient.Search", articleParams);
+//                    //----------- Flurry -------------------------------------------------
+//
+//
+//                    if (isInternetOn()) {
+//
+//                        pagination = true;
+//
+//                        //-----------------------------
+//                        String search_url = Model.BASE_URL + "app/search?q=" + search_text + "&page=0";
+//                        System.out.println("search_url------" + search_url);
+//                        new MyTask_server().execute(search_url);
+//                        //-----------------------------
+//
+////                        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+////                        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+//
+//                    } else {
+//                        //Toast.makeText(Search_Screen.this, "Internet is not connected", Toast.LENGTH_SHORT).show();
+//                        Snackbar.make(v, "Internet is not connected", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+//                    }
+//
+//                    return true;
+//                }
+//                return false;
+//            }
+//        });
 
         edt_searchword.addTextChangedListener(new TextWatcher() {
             @Override
@@ -1302,12 +1302,14 @@ public class Search_Screen extends BaseActivity implements ObservableScrollViewC
 
             if ((Model.query_launch).equals("SpecialityListActivity")) {
 
-                System.out.println("Resume Model.query_launch-----" + Model.select_spec_val);
-                System.out.println("Resume Model.select_specname-----" + Model.select_specname);
+//                System.out.println("Resume Model.query_launch-----" + Model.select_spec_val);
+//                System.out.println("Resume Model.select_specname-----" + Model.select_specname);
 
+                Log.e("select_specname",Model.select_specname+" ");
                 if (!Model.select_spec_val.equals("0")) {
+                    Log.e("select_specname",Model.select_specname+" ");
 
-                    System.out.println("text------------------" + Model.select_specname);
+//                    System.out.println("text------------------" + Model.select_specname);
 
                     search_by_word(Model.select_specname);
 
@@ -1350,11 +1352,12 @@ public class Search_Screen extends BaseActivity implements ObservableScrollViewC
                 //-------------------------------------------------------
                 String search_url = Model.BASE_URL + "app/search?q=" + search_text + "&page=0";
                 System.out.println("search_url------------------" + search_url);
+                new MyTask_server().cancel(true);
                 new MyTask_server().execute(search_url);
                 //-------------------------------------------------------
 
-                InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+//                InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+//                inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
 
             } else {
                 //Toast.makeText(Search_Screen.this, "Internet is not connected", Toast.LENGTH_SHORT).show();

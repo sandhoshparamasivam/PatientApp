@@ -124,7 +124,7 @@ public class AskQuery2 extends AppCompatActivity {
     private static final int CAMERA_REQUEST = 1888;
     private static final String TAG = "FileChooserExampleActivity";
     private static final int REQUEST_CODE = 6384; // onActivityResult request
-
+    String Doc_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -222,6 +222,10 @@ public class AskQuery2 extends AppCompatActivity {
         Intent intent = getIntent();
         qid = intent.getStringExtra("qid");
         persona_id_val = intent.getStringExtra("persona_id");
+        Doc_id=intent.getStringExtra("Doc_id");
+        if (Doc_id!=null){
+            Log.e("Doc_id In askQuery 2",Doc_id+" ");
+        }
 
         System.out.println("Get Intent qid-----" + qid);
         System.out.println("Get Intent persona_id_val-----" + persona_id_val);
@@ -1332,7 +1336,7 @@ public class AskQuery2 extends AppCompatActivity {
 
 
                     //---------------------------------------------------------------------------
-                    if ((Model.have_free_credit).equals("1")) {
+                    if ((Model.have_free_credit).equals("1") && Doc_id==null || Doc_id.isEmpty()) {
                         tv_attach_warn.setVisibility(View.VISIBLE);
 
                         String warn_text = "Note : Doctors take more effort to read your reports/photos. So queries with reports have to be posted as a Paid query <b>" + fee_q + "</b>";
