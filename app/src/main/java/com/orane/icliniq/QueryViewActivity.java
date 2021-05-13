@@ -2234,7 +2234,7 @@ public class QueryViewActivity extends BaseActivity implements ObservableScrollV
 
             System.out.println("query_str Length-------------" + query_str.length());
 
-            if ((query_str.length()) > 0) {
+            if ((query_str.length()) > 160) {
                 query_txt = URLEncoder.encode((edt_query.getText().toString()), "UTF-8");
 
                 json_followup = new JSONObject();
@@ -2254,9 +2254,22 @@ public class QueryViewActivity extends BaseActivity implements ObservableScrollV
                 System.out.println("Followup-------------");
                 new JSONPostQuery().execute(json_followup);
 
-            } else
-                edt_query.setError("Please enter your query");
-            edt_query.requestFocus();
+            } else {
+
+                final MaterialDialog alert = new MaterialDialog(QueryViewActivity.this);
+                alert.setTitle("Invalid Query");
+                alert.setMessage("Please Enter minimum 160 Character's");
+                alert.setCanceledOnTouchOutside(false);
+                alert.setPositiveButton("ok", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alert.dismiss();
+                    }
+                });
+
+                alert.show();
+            }
+
 
         } catch (Exception e) {
             System.out.println("Exception Followup ---- " + e.toString());

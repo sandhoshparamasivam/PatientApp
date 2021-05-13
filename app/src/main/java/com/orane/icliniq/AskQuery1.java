@@ -722,7 +722,7 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
 
                                             final MaterialDialog alert = new MaterialDialog(AskQuery1.this);
                                             alert.setTitle("Invalid Query");
-                                            alert.setMessage("Please Enter minimum 160 Char(s)");
+                                            alert.setMessage("Please Enter minimum 160 Character's");
                                             alert.setCanceledOnTouchOutside(false);
                                             alert.setPositiveButton("ok", new View.OnClickListener() {
                                                 @Override
