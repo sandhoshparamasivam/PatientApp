@@ -583,7 +583,7 @@ public class Attachment_Screen_Activity extends AppCompatActivity implements Dat
                 e.printStackTrace();
             }
 
-            dialog.cancel();
+             dialog.dismiss();
         }
     }
 
@@ -967,7 +967,7 @@ public class Attachment_Screen_Activity extends AppCompatActivity implements Dat
                 e.printStackTrace();
             }
 
-            dialog.cancel();
+             dialog.dismiss();
         }
     }
 

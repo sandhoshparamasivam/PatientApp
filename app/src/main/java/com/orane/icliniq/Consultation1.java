@@ -2481,7 +2481,7 @@ public class Consultation1 extends AppCompatActivity {
 
             apply_relaships_radio(family_list);
 
-            dialog.cancel();
+             dialog.dismiss();
         }
     }
 
@@ -2947,7 +2947,7 @@ public class Consultation1 extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            dialog.cancel();
+             dialog.dismiss();
         }
     }
 

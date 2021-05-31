@@ -685,7 +685,7 @@ public class Dr_Lalpaths_Fragment extends Fragment implements ObservableScrollVi
 
                 System.out.println("count-------------" + count);
 
-                dialog.cancel();
+                 dialog.dismiss();
 
             } catch (Exception e) {
                 e.printStackTrace();

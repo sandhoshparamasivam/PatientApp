@@ -721,8 +721,7 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
                                     } else{
 
                                             final MaterialDialog alert = new MaterialDialog(AskQuery1.this);
-                                            alert.setTitle("Invalid Query");
-                                            alert.setMessage("Please Enter minimum 160 Character's");
+                                            alert.setMessage("Please enter the query atleast 160 characters");
                                             alert.setCanceledOnTouchOutside(false);
                                             alert.setPositiveButton("ok", new View.OnClickListener() {
                                                 @Override
@@ -5193,7 +5192,7 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
                 e.printStackTrace();
             }
 
-            dialog.cancel();
+             dialog.dismiss();
         }
     }
 
@@ -5298,7 +5297,7 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
                     }
                 }
 
-                dialog.cancel();
+                 dialog.dismiss();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -5424,7 +5423,7 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
 
             apply_relaships_radio(family_list);
 
-            dialog.cancel();
+             dialog.dismiss();
         }
     }
 
@@ -5470,7 +5469,7 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
 
                 apply_relaships_radio(family_list);
 
-                dialog.cancel();
+                 dialog.dismiss();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -5691,7 +5690,7 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
                 e.printStackTrace();
             }
 
-            dialog.cancel();
+             dialog.dismiss();
         }
     }
 
@@ -5734,7 +5733,7 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
                     tv_fee1.setText("");
                 }
 
-                dialog.cancel();
+                 dialog.dismiss();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -5779,7 +5778,7 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
                     tv_fee11.setText("");
                 }
 
-                dialog.cancel();
+                 dialog.dismiss();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -5905,7 +5904,7 @@ public class AskQuery1 extends AppCompatActivity implements View.OnClickListener
                 e.printStackTrace();
             }
 
-            dialog.cancel();
+             dialog.dismiss();
         }
     }
 }

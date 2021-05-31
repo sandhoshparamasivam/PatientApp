@@ -338,7 +338,7 @@ public class Prescription_Entry_Activity extends AppCompatActivity {
 
                 finish();
 
-                dialog.cancel();
+                 dialog.dismiss();
 
             } catch (Exception e) {
                 e.printStackTrace();

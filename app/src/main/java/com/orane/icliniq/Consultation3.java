@@ -732,7 +732,7 @@ public class Consultation3 extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         }
-                        dialog.cancel();
+                         dialog.dismiss();
                     }
 
                 }
@@ -1421,7 +1421,7 @@ public class Consultation3 extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            dialog.cancel();
+             dialog.dismiss();
         }
     }
 

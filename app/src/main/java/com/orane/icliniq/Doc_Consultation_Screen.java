@@ -497,7 +497,7 @@ public class Doc_Consultation_Screen extends AppCompatActivity {
                     startActivityForResult(intent, 1);
 
 
-                    dialog.cancel();
+                     dialog.dismiss();
                 }
 
             } catch (Exception e) {

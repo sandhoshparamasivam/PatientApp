@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.orane.icliniq.Model.Model;
 import com.orane.icliniq.R;
+import com.orane.icliniq.utils.RetrofitService;
 
 import java.util.ArrayList;
 

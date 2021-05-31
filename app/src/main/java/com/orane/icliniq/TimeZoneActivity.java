@@ -216,7 +216,7 @@ public class TimeZoneActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            dialog.cancel();
+             dialog.dismiss();
         }
     }
 

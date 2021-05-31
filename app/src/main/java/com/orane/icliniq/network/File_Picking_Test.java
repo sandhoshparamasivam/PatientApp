@@ -280,7 +280,7 @@ public class File_Picking_Test extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            dialog.cancel();
+             dialog.dismiss();
         }
     }
 

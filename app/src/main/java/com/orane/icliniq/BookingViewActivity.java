@@ -273,7 +273,7 @@ public class BookingViewActivity extends AppCompatActivity {
                     //---------------------------------------------------------
 
                     main_layout.setVisibility(View.VISIBLE);
-                    dialog.cancel();
+                     dialog.dismiss();
 
                     //-------------------------------------------------------------------
                     String get_family_url = Model.BASE_URL + "sapp/listHReportsData?item_id=" + booking_id + "&item_type=booking&user_id=" + Model.id + "&token=" + Model.token;
@@ -518,7 +518,7 @@ public class BookingViewActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            dialog.cancel();
+             dialog.dismiss();
         }
     }
 

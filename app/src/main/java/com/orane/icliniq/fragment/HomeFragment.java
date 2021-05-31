@@ -29,6 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
@@ -50,6 +51,7 @@ import com.orane.icliniq.PrePackActivity;
 import com.orane.icliniq.QueryActivity;
 import com.orane.icliniq.R;
 import com.orane.icliniq.Search_Screen;
+import com.orane.icliniq.SevenDayChatActivity;
 import com.orane.icliniq.SubscriptionPackActivity;
 import com.orane.icliniq.network.JSONParser;
 import com.orane.icliniq.network.NetCheck;
@@ -105,6 +107,7 @@ public class HomeFragment extends Fragment {
     //SlidingTabLayout sliding_tabs;
     //public LinearLayout bottom_bar;
     Toolbar toolbar;
+    CardView sevenChat_layout,relativeLayout;
 
     private static final String ARG_TEXT = "arg_text";
     private static final String ARG_COLOR = "arg_color";
@@ -153,18 +156,7 @@ public class HomeFragment extends Fragment {
 
         ringtone.play();*/
 
-     /*   //--------------- Alert Service -------------------------------------------------------
-        if (checkRingerIsOn(getActivity())) {
-            MediaPlayer mediaPlayer = MediaPlayer.create(getActivity(), R.raw.phone_loud1);
-            mediaPlayer.start();
-        } else {
-            Vibrator v = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
-            // Vibrate for 500 milliseconds
-            v.vibrate(500);
-        }
-        //--------------- Alert Service -------------------------------------------------------
 
-*/
 
         font_reg = Typeface.createFromAsset(getActivity().getAssets(), Model.font_name);
         fonr_bold = Typeface.createFromAsset(getActivity().getAssets(), Model.font_name_bold);
@@ -174,6 +166,9 @@ public class HomeFragment extends Fragment {
 
 
         deals_layout = view.findViewById(R.id.deals_layout);
+        sevenChat_layout = view.findViewById(R.id.sevenChat_layout);
+        sevenChat_layout.setVisibility(View.GONE);
+        relativeLayout = view.findViewById(R.id.relativeLayout);
         scrollview = view.findViewById(R.id.scrollview);
         tv_pvcons2 = view.findViewById(R.id.tv_pvcons2);
         hotlinechat2 = view.findViewById(R.id.hotlinechat2);
@@ -186,8 +181,8 @@ public class HomeFragment extends Fragment {
         tv_askquery = view.findViewById(R.id.tv_askquery);
         hotlinechat = view.findViewById(R.id.hotlinechat);
         tv_pvcons = view.findViewById(R.id.tv_pvcons);
-        offer_title = view.findViewById(R.id.offer_title);
-        offer_desc = view.findViewById(R.id.offer_desc);
+//        offer_title = view.findViewById(R.id.offer_title);
+//        offer_desc = view.findViewById(R.id.offer_desc);
         //myhealth_layout = (LinearLayout) view.findViewById(R.id.myhealth_layout);
 
         // top_search_layout = (LinearLayout) view.findViewById(R.id.top_search_layout);
@@ -202,7 +197,7 @@ public class HomeFragment extends Fragment {
         innerLay = view.findViewById(R.id.innerLay);
         how_desc = view.findViewById(R.id.how_desc);
         how_title = view.findViewById(R.id.how_title);
-        butt_text = view.findViewById(R.id.butt_text);
+//        butt_text = view.findViewById(R.id.butt_text);
         img_offer_banner = view.findViewById(R.id.img_offer_banner);
         tv_viewall = view.findViewById(R.id.tv_viewall);
 
@@ -229,12 +224,7 @@ public class HomeFragment extends Fragment {
         btn_getitnow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-/*
-                Model.query_launch = "MainActivity";
-                Intent intent = new Intent(getActivity(), HotlineHome.class);
-                startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
-*/
+
 
                 Intent intent = new Intent(getActivity(), Instant_Chat.class);
                 intent.putExtra("doctor_id", "0");
@@ -242,8 +232,23 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-
+//        sevenChat_layout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), SevenDayChatActivity.class);
+//                startActivity(intent);
+//
+//            }
+//        });
+        relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Instant_Chat.class);
+                intent.putExtra("doctor_id", "0");
+                intent.putExtra("plan_id", "");
+                startActivity(intent);
+            }
+        });
         layout_AskQuery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -327,11 +332,11 @@ public class HomeFragment extends Fragment {
         hotlinechat.setTypeface(fonr_bold);
         hotlinechat2.setTypeface(font_reg);
 
-        offer_title.setTypeface(fonr_bold);
-        offer_desc.setTypeface(font_reg);
+//        offer_title.setTypeface(fonr_bold);
+//        offer_desc.setTypeface(font_reg);
         how_title.setTypeface(fonr_bold);
         how_desc.setTypeface(font_reg);
-        butt_text.setTypeface(fonr_bold);
+//        butt_text.setTypeface(fonr_bold);
 
         Animation animSlideDown = AnimationUtils.loadAnimation(getActivity(), R.anim.bounce);
         offer_image1.startAnimation(animSlideDown);
@@ -1154,7 +1159,7 @@ public class HomeFragment extends Fragment {
             try {
                 System.out.println("logout_jsonobj---------------" + logout_jsonobj.toString());
 
-                dialog.cancel();
+                 dialog.dismiss();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -1230,7 +1235,7 @@ public class HomeFragment extends Fragment {
                     }
                 }
 
-                // dialog.cancel();
+                //  dialog.dismiss();
 
             } catch (Exception e) {
                 e.printStackTrace();

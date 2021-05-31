@@ -407,7 +407,7 @@ public class Labtest_Beneficiary extends AppCompatActivity implements
                 e.printStackTrace();
             }
 
-            dialog.cancel();
+             dialog.dismiss();
         }
     }
 
@@ -527,7 +527,7 @@ public class Labtest_Beneficiary extends AppCompatActivity implements
                     }
                 }
 
-                dialog.cancel();
+                 dialog.dismiss();
 
             } catch (Exception e) {
                 e.printStackTrace();

@@ -1514,7 +1514,7 @@ public class Invoice_Page_New extends AppCompatActivity {
                 new JSON_txnid().execute(url2);
                 //--------------------------------------------------------*/
 
-                dialog.cancel();
+                 dialog.dismiss();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -1616,7 +1616,7 @@ public class Invoice_Page_New extends AppCompatActivity {
 
                     coupon_code = "no";
                     //coupon_success();
-                    dialog.cancel();
+                     dialog.dismiss();
                 }
 
             } catch (Exception e) {
@@ -1823,7 +1823,7 @@ public class Invoice_Page_New extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            dialog.cancel();
+             dialog.dismiss();
         }
     }
 
@@ -1935,7 +1935,7 @@ public class Invoice_Page_New extends AppCompatActivity {
 
             try {
 
-                dialog.cancel();
+                 dialog.dismiss();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -1969,7 +1969,7 @@ public class Invoice_Page_New extends AppCompatActivity {
         protected void onPostExecute(Boolean result) {
 
             try {
-                dialog.cancel();
+                 dialog.dismiss();
 
                 try {
 

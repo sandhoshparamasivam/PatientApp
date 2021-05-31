@@ -566,7 +566,7 @@ public class Patient_Profile_Activity extends AppCompatActivity implements
                 e.printStackTrace();
             }
 
-            dialog.cancel();
+             dialog.dismiss();
 
         }
     }
@@ -746,7 +746,7 @@ public class Patient_Profile_Activity extends AppCompatActivity implements
 
                 Model.query_launch = "profile_update";
 
-                dialog.cancel();
+                 dialog.dismiss();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -924,7 +924,7 @@ public class Patient_Profile_Activity extends AppCompatActivity implements
                     }
                 }
 
-                dialog.cancel();
+                 dialog.dismiss();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -969,7 +969,7 @@ public class Patient_Profile_Activity extends AppCompatActivity implements
 
                 pin_val = jsonobj.getString("pin");
 
-                dialog.cancel();
+                 dialog.dismiss();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -3575,7 +3575,7 @@ public class Patient_Profile_Activity extends AppCompatActivity implements
 
                 getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-                dialog.cancel();
+                 dialog.dismiss();
 
             } catch (Exception e) {
                 e.printStackTrace();

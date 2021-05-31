@@ -642,7 +642,7 @@ public class File_Upload_Screen extends AppCompatActivity {
                     finish();
                 }
 */
-                    dialog.cancel();
+                     dialog.dismiss();
                 }
 
             } catch (Exception e) {

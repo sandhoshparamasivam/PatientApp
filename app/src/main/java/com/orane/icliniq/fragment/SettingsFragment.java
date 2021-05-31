@@ -610,7 +610,7 @@ public class SettingsFragment extends Fragment {
                 e.printStackTrace();
             }
 
-            dialog.cancel();
+             dialog.dismiss();
 
         }
     }
@@ -654,7 +654,7 @@ public class SettingsFragment extends Fragment {
             try {
                 System.out.println("logout_jsonobj---------------" + logout_jsonobj.toString());
 
-                dialog.cancel();
+                 dialog.dismiss();
                 Model.token="0";
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putString(token, "0");

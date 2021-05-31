@@ -188,7 +188,7 @@ public class FeedbackActivity extends AppCompatActivity {
                     }
                 }
 
-                dialog.cancel();
+                 dialog.dismiss();
 
             } catch (Exception e) {
                 e.printStackTrace();

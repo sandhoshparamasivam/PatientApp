@@ -350,15 +350,35 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="110dp"
-                    android:scaleType="fitXY"
+                    android:scaleType="center"
                     android:src="@drawable/banner" />
 
             </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sevenChat_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:elevation="10dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="5dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/seven_day" />
 
-            <RelativeLayout
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:id="@+id/relativeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:elevation="10dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="10dp"
                 android:layout_margin="5dp">
 
                 <FrameLayout
@@ -368,9 +388,10 @@
                     <ImageView
                         android:id="@+id/offer_image1"
                         android:layout_width="match_parent"
-                        android:layout_height="110dp"
+                        android:layout_height="wrap_content"
                         android:onClick="onClick_hotline"
                         android:scaleType="fitXY"
+                        android:adjustViewBounds="true"
                         android:src="@mipmap/icq50_banner" />
 
                     <Button
@@ -396,58 +417,58 @@
 
                 </FrameLayout>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentTop="true"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:orientation="vertical"
-                    android:paddingLeft="10dp"
-                    android:paddingTop="10dp"
-                    android:paddingRight="5dp"
-                    android:paddingBottom="5dp"
-                    android:visibility="gone">
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:background="?android:attr/selectableItemBackground"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:paddingLeft="10dp"-->
+<!--                    android:paddingTop="10dp"-->
+<!--                    android:paddingRight="5dp"-->
+<!--                    android:paddingBottom="5dp"-->
+<!--                    android:visibility="gone">-->
 
-                    <TextView
-                        android:id="@+id/offer_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:fontFamily="sans-serif-smallcaps"
-                        android:text="Get 25% Offer"
-                        android:textColor="@color/app_color"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/offer_title"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentTop="true"-->
+<!--                        android:fontFamily="sans-serif-smallcaps"-->
+<!--                        android:text="Get 25% Offer"-->
+<!--                        android:textColor="@color/app_color"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <TextView
-                        android:id="@+id/offer_desc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/offer_title"
-                        android:layout_marginRight="110dp"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="sans-serif"
-                        android:text="Get up to 25% OFF on every payment with a prepaid package."
-                        android:textColor="@color/app_color"
-                        android:textSize="13sp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/offer_desc"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_below="@+id/offer_title"-->
+<!--                        android:layout_marginRight="110dp"-->
+<!--                        android:layout_marginBottom="5dp"-->
+<!--                        android:fontFamily="sans-serif"-->
+<!--                        android:text="Get up to 25% OFF on every payment with a prepaid package."-->
+<!--                        android:textColor="@color/app_color"-->
+<!--                        android:textSize="13sp" />-->
 
-                    <TextView
-                        android:id="@+id/butt_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="110dp"
-                        android:layout_marginBottom="5dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="Read Now"
-                        android:textAllCaps="true"
-                        android:textColor="@color/app_color"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/butt_text"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentBottom="true"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:layout_marginRight="110dp"-->
+<!--                        android:layout_marginBottom="5dp"-->
+<!--                        android:fontFamily="sans-serif-medium"-->
+<!--                        android:text="Read Now"-->
+<!--                        android:textAllCaps="true"-->
+<!--                        android:textColor="@color/app_color"-->
+<!--                        android:textSize="17sp"-->
+<!--                        android:textStyle="bold" />-->
 
-                </RelativeLayout>
-            </RelativeLayout>
+<!--                </RelativeLayout>-->
+            </androidx.cardview.widget.CardView>
 
 
             <TextView
@@ -1148,9 +1169,10 @@
                             <ImageView
                                 android:id="@+id/offer_image2"
                                 android:layout_width="match_parent"
-                                android:layout_height="120dp"
+                                android:layout_height="wrap_content"
                                 android:onClick="onClick_offer"
                                 android:scaleType="fitXY"
+                                android:adjustViewBounds="true"
                                 android:src="@mipmap/nonindia_subs" />
 
                             <Button

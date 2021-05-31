@@ -2741,7 +2741,7 @@ public class SomeoneEdit_Dialog extends AppCompatActivity implements
                 finish();
 
 
-                dialog.cancel();
+                 dialog.dismiss();
 
             } catch (Exception e) {
                 e.printStackTrace();
