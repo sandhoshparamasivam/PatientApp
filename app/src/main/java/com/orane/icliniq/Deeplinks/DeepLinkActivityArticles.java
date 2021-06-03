@@ -9,7 +9,6 @@ import android.os.Bundle;
 
 import com.orane.icliniq.ArticleViewActivity;
 import com.orane.icliniq.Model.Model;
-import com.orane.icliniq.WebViewActivity;
 import com.orane.icliniq.WebViewArticleActivity;
 
 

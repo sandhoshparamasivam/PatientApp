@@ -34,6 +34,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.flurry.android.FlurryAgent;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.Gson;
@@ -66,8 +69,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import me.drakeet.materialdialog.MaterialDialog;
 import retrofit2.Call;
 import retrofit2.Callback;

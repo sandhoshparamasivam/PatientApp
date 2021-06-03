@@ -4,17 +4,16 @@ package com.orane.icliniq.Parallex;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.orane.icliniq.Model.ItemCons;
+import androidx.fragment.app.Fragment;
+
 import com.orane.icliniq.Model.Model;
 import com.orane.icliniq.Parallex.libs.NotifyingScrollView;
 import com.orane.icliniq.Parallex.libs.ScrollViewFragment;
@@ -24,8 +23,6 @@ import com.orane.icliniq.network.JSONParser;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.util.List;
 
 public class ArticlesFragment extends ScrollViewFragment {
 

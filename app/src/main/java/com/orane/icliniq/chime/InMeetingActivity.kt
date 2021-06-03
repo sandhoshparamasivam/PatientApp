@@ -7,11 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.amazonaws.services.chime.sdk.meetings.audiovideo.AudioVideoFacade
-import com.amazonaws.services.chime.sdk.meetings.session.CreateAttendeeResponse
-import com.amazonaws.services.chime.sdk.meetings.session.CreateMeetingResponse
-import com.amazonaws.services.chime.sdk.meetings.session.DefaultMeetingSession
-import com.amazonaws.services.chime.sdk.meetings.session.MeetingSession
-import com.amazonaws.services.chime.sdk.meetings.session.MeetingSessionConfiguration
+import com.amazonaws.services.chime.sdk.meetings.session.*
 import com.amazonaws.services.chime.sdk.meetings.utils.logger.ConsoleLogger
 import com.amazonaws.services.chime.sdk.meetings.utils.logger.LogLevel
 import com.google.gson.Gson

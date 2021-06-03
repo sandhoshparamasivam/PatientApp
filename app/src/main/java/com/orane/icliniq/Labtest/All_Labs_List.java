@@ -7,34 +7,28 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import androidx.fragment.app.Fragment;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.github.ksoichiro.android.observablescrollview.ObservableListView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
-import com.google.firebase.analytics.FirebaseAnalytics;
-import com.orane.icliniq.ArticleViewActivity;
-import com.orane.icliniq.Labtest_WebViewActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.orane.icliniq.LoginActivity;
 import com.orane.icliniq.Model.Item;
 import com.orane.icliniq.Model.Model;
 import com.orane.icliniq.R;
-import com.orane.icliniq.WebViewActivity;
 import com.orane.icliniq.adapter.LabtestListAdapter;
 import com.orane.icliniq.network.JSONParser;
 

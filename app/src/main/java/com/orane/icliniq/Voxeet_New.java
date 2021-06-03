@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-
 import com.voxeet.VoxeetSDK;
 import com.voxeet.android.media.MediaStream;
 import com.voxeet.android.media.MediaStreamType;

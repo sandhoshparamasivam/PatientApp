@@ -10,7 +10,6 @@
     <dimen name="margin">8dp</dimen>
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="title_text_size">18sp</dimen>
 
@@ -22,36 +21,47 @@
     <dimen name="min_header_height">250dp</dimen>
 
     <!--Welcome sliding page  -->
-    <dimen name="welcome_heading">24.0sp</dimen>
-    <dimen name="welcome_content">16.0sp</dimen>
 
     <!-- File Chooser  -->
 
-    <dimen name="list_item_padding">16dp</dimen>
     <!-- File Chooser  -->
 
 
     <!-- Intro Screen -->
     <dimen name="dots_height">30dp</dimen>
     <dimen name="dots_margin_bottom">20dp</dimen>
-    <dimen name="img_width_height">120dp</dimen>
     <dimen name="slide_title">25dp</dimen>
     <dimen name="slide_desc">16dp</dimen>
     <dimen name="desc_padding">40dp</dimen>
     <!-- Intro Screen -->
 
-    <dimen name="icon_top_margin">24dp</dimen>
-    <dimen name="icon_bottom_margin">24dp</dimen>
-    <dimen name="title_bottom_margin">16dp</dimen>
-    <dimen name="field_width_standard">160dp</dimen>
 
-
-    <dimen name="publisher_height">120dp</dimen>
-    <dimen name="publisher_width">90dp</dimen>
-    <dimen name="publisher_end_margin">16dp</dimen>
-    <dimen name="publisher_right_margin">16dp</dimen>
-    <dimen name="publisher_bottom_margin">16dp</dimen>
-    <dimen name="publisher_padding">2dp</dimen>
-
+    //text size
+    <dimen name="text10sp">10sp</dimen>
+    <dimen name="text11sp">11sp</dimen>
+    <dimen name="text12sp">12sp</dimen>
+    <dimen name="text13sp">13sp</dimen>
+    <dimen name="text14sp">14sp</dimen>
+    <dimen name="text15sp">15sp</dimen>
+    <dimen name="text16sp">16sp</dimen>
+    <dimen name="text17sp">17sp</dimen>
+    <dimen name="text18sp">18sp</dimen>
+    <dimen name="text19sp">19sp</dimen>
+    <dimen name="text20sp">20sp</dimen>
+    <dimen name="text21sp">21sp</dimen>
+    <dimen name="text22sp">22sp</dimen>
+    <dimen name="text23sp">23sp</dimen>
+    <dimen name="text24sp">24sp</dimen>
+    <dimen name="text25sp">25sp</dimen>
+    <dimen name="text26sp">26sp</dimen>
+    <dimen name="text27sp">27sp</dimen>
+    <dimen name="text28sp">28sp</dimen>
+    <dimen name="text29sp">29sp</dimen>
+    <dimen name="text30sp">30sp</dimen>
+    <dimen name="text31sp">31sp</dimen>
+    <dimen name="text32sp">32sp</dimen>
+    <dimen name="text33sp">33sp</dimen>
+    <dimen name="text34sp">34sp</dimen>
+    <dimen name="text35sp">35sp</dimen>
 
 </resources>

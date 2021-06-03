@@ -1,15 +1,15 @@
 package com.orane.icliniq.Model;
 
 import android.content.res.TypedArray;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.orane.icliniq.R;
 import com.orane.icliniq.SimpleHeaderRecyclerAdapter;

@@ -2,9 +2,10 @@ package com.orane.icliniq.Model;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.CheckBox;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.orane.icliniq.R;
 import com.wdullaer.materialdatetimepicker.Utils;

@@ -18,13 +18,12 @@ app:popupTheme="@style/AppTheme.PopupOverlay"
 app:titleTextAppearance="@style/toolbar_style">
 
 <TextView
-android:id="@+id/tvTitle"
-android:layout_width="wrap_content"
+    android:layout_width="wrap_content"
 android:layout_height="wrap_content"
 android:fontFamily="sans-serif"
 android:text="Chat with a doctor"
 android:textColor="@color/white"
-android:textSize="17sp" />
+android:textSize="@dimen/text17sp" />
 
 </androidx.appcompat.widget.Toolbar>
 
@@ -55,7 +54,7 @@ android:fontFamily="sans-serif"
 android:padding="5dp"
 android:text="Consult for (select a person)"
 android:textColor="@color/mds_bluegrey_700"
-android:textSize="15dp" />
+android:textSize="@dimen/text15sp" />
 
 <LinearLayout
 android:id="@+id/someone_layout"
@@ -104,7 +103,7 @@ android:fontFamily="sans-serif"
 android:padding="5dp"
 android:text="Basic Information"
 android:textColor="@color/mds_bluegrey_700"
-android:textSize="15sp" />
+android:textSize="@dimen/text15sp" />
 
 <ImageView
 android:id="@+id/img_edit_icon"
@@ -359,8 +358,7 @@ card_view:cardCornerRadius="5dp"
 card_view:contentPadding="0dp">
 
 <LinearLayout
-android:id="@+id/icq7Layout"
-android:layout_width="150dp"
+    android:layout_width="150dp"
 android:layout_height="wrap_content"
 android:background="@drawable/answeredittext2"
 android:elevation="10dp"

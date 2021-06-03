@@ -2,9 +2,10 @@
 package com.orane.icliniq;
 
 import android.os.Bundle;
-import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.FrameLayout;
+
+import androidx.appcompat.widget.Toolbar;
 
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;

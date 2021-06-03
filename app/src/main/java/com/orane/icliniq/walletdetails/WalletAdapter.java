@@ -6,13 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.orane.icliniq.R;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import androidx.recyclerview.widget.RecyclerView;
 
 public class WalletAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 

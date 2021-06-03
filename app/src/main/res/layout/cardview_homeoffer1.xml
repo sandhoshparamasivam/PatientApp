@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:foo="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="10dp"
@@ -29,7 +28,6 @@
             android:orientation="vertical">
 
             <RelativeLayout
-                android:id="@+id/text_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp">
@@ -106,7 +104,6 @@
                         android:textSize="13sp" />
 
                     <TextView
-                        android:id="@+id/butt_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
@@ -124,7 +121,6 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/tv_getitnow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|right"

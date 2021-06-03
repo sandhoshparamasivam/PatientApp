@@ -4,8 +4,6 @@ package com.orane.icliniq.Parallex;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -19,6 +17,9 @@ import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.orane.icliniq.Model.ItemCons;

@@ -191,7 +191,6 @@
                             android:visibility="gone" />
 
                         <TextView
-                            android:id="@+id/tvdate2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:ellipsize="end"
@@ -208,7 +207,6 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/img_right"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
@@ -269,7 +267,6 @@
                         android:visibility="gone">
 
                         <ImageView
-                            android:id="@+id/img_tick"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_centerVertical="true"
@@ -303,7 +300,6 @@
                         android:visibility="visible">
 
                         <ImageView
-                            android:id="@+id/img_draft"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_centerVertical="true"
@@ -336,7 +332,6 @@
                         android:visibility="gone">
 
                         <ImageView
-                            android:id="@+id/img_wait"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_centerVertical="true"
@@ -394,7 +389,6 @@
 
 
                 <ImageView
-                    android:id="@+id/fav_icon"
                     android:layout_width="27dp"
                     android:layout_height="27dp"
                     android:layout_alignParentTop="true"

@@ -392,7 +392,7 @@
                         android:onClick="onClick_hotline"
                         android:scaleType="fitXY"
                         android:adjustViewBounds="true"
-                        android:src="@mipmap/icq50_banner" />
+                        android:src="@drawable/icq50_banner" />
 
                     <Button
                         android:id="@+id/btn_getitnow"
@@ -511,7 +511,6 @@
                         android:src="@mipmap/chat_icon" />
 
                     <LinearLayout
-                        android:id="@+id/icon_row_layout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -617,7 +616,6 @@
             </RelativeLayout>
 
             <HorizontalScrollView
-                android:id="@+id/hsv_deals"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -665,7 +663,6 @@
                     android:orientation="vertical">
 
                     <RelativeLayout
-                        android:id="@+id/text_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="8dp"
@@ -695,7 +692,6 @@
 
 
                     <TextView
-                        android:id="@+id/tv_getitnow"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|right"
@@ -758,7 +754,6 @@
                 </RelativeLayout>
 
                 <HorizontalScrollView
-                    android:id="@+id/hsv"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -1232,7 +1227,6 @@
                                 android:textSize="13sp" />
 
                             <TextView
-                                android:id="@+id/butt_text2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentBottom="true"
@@ -1251,7 +1245,6 @@
                     </RelativeLayout>
 
                     <TextView
-                        android:id="@+id/tv_getitnow2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|right"

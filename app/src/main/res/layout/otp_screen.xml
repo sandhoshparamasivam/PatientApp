@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/login_bg"
@@ -349,7 +348,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/phone_auth_fields"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -363,14 +361,12 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/field_phone_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/hint_phone_number"
                         android:inputType="phone" />
 
                     <EditText
-                        android:id="@+id/field_verification_code"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/hint_verification_code"
@@ -385,7 +381,6 @@
                     android:weightSum="3.0">
 
                     <Button
-                        android:id="@+id/button_start_verification"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.0"
@@ -393,7 +388,6 @@
                         android:theme="@style/ThemeOverlay.MyDarkButton" />
 
                     <Button
-                        android:id="@+id/button_verify_phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.0"
@@ -401,7 +395,6 @@
                         android:theme="@style/ThemeOverlay.MyDarkButton" />
 
                     <Button
-                        android:id="@+id/button_resend"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.0"

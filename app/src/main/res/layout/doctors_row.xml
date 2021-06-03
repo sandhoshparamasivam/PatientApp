@@ -54,7 +54,6 @@
                                 android:orientation="horizontal">
 
                                 <LinearLayout
-                                    android:id="@+id/totlay"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_toLeftOf="@+id/img_next"
@@ -82,7 +81,6 @@
                                             app:border_width="0.5dp" />
 
                                         <ImageView
-                                            android:id="@+id/imageview_poster2"
                                             android:layout_width="57dp"
                                             android:layout_height="57dp"
                                             android:layout_marginRight="8dp"
@@ -181,7 +179,6 @@
 
 
                                     <TextView
-                                        android:id="@+id/tv_lang"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="15dp"
@@ -214,7 +211,6 @@
                                             android:visibility="visible">
 
                                             <LinearLayout
-                                                android:id="@+id/likedoc_layout"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginLeft="10dp"
@@ -301,7 +297,6 @@
 
 
                                         <LinearLayout
-                                            android:id="@+id/press_layout"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_alignParentRight="true"
@@ -331,7 +326,6 @@
                                                 android:textSize="14sp" />
 
                                             <Button
-                                                android:id="@+id/btn_book"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="30dp"
                                                 android:layout_centerVertical="true"
@@ -375,7 +369,6 @@
 
 
                                 <LinearLayout
-                                    android:id="@+id/left_lay"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerVertical="true"
@@ -416,7 +409,6 @@
                                         android:visibility="gone" />
 
                                     <TextView
-                                        android:id="@+id/tv_lefttext"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_vertical"

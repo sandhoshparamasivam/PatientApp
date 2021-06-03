@@ -13,8 +13,8 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 
-import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.orane.icliniq.Model.Model;
@@ -31,15 +31,10 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 
 import pl.tajchert.nammu.Nammu;

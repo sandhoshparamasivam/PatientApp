@@ -2,8 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
-    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/parent_layout"
     android:layout_width="match_parent"
@@ -237,7 +235,6 @@
                         android:stretchColumns="*">
 
                         <TableRow
-                            android:id="@+id/tableRow1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="3dp">
@@ -332,7 +329,6 @@
                                     </LinearLayout>
 
                                     <TextView
-                                        android:id="@+id/tvcons"
                                         android:layout_width="25dip"
                                         android:layout_height="25dip"
                                         android:layout_gravity="top|right"
@@ -392,7 +388,6 @@
                                     </LinearLayout>
 
                                     <TextView
-                                        android:id="@+id/tv_icon_newc"
                                         android:layout_width="25dip"
                                         android:layout_height="25dip"
                                         android:layout_gravity="top|right"
@@ -656,7 +651,6 @@
 
 
                     <HorizontalScrollView
-                        android:id="@+id/hsv"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"

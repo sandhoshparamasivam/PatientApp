@@ -20,8 +20,8 @@ android {
         applicationId "com.orane.icliniq"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 120265
-        versionName "19.9.95"
+        versionCode 120266
+        versionName "19.9.96"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
 

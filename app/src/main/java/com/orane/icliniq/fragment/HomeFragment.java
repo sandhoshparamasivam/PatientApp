@@ -167,7 +167,6 @@ public class HomeFragment extends Fragment {
 
         deals_layout = view.findViewById(R.id.deals_layout);
         sevenChat_layout = view.findViewById(R.id.sevenChat_layout);
-        sevenChat_layout.setVisibility(View.GONE);
         relativeLayout = view.findViewById(R.id.relativeLayout);
         scrollview = view.findViewById(R.id.scrollview);
         tv_pvcons2 = view.findViewById(R.id.tv_pvcons2);
@@ -181,7 +180,7 @@ public class HomeFragment extends Fragment {
         tv_askquery = view.findViewById(R.id.tv_askquery);
         hotlinechat = view.findViewById(R.id.hotlinechat);
         tv_pvcons = view.findViewById(R.id.tv_pvcons);
-//        offer_title = view.findViewById(R.id.offer_title);
+//        offer_title = view.findViewById(R.id.offe-+-r_title);
 //        offer_desc = view.findViewById(R.id.offer_desc);
         //myhealth_layout = (LinearLayout) view.findViewById(R.id.myhealth_layout);
 
@@ -232,14 +231,14 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-//        sevenChat_layout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), SevenDayChatActivity.class);
-//                startActivity(intent);
-//
-//            }
-//        });
+        sevenChat_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SevenDayChatActivity.class);
+                startActivity(intent);
+
+            }
+        });
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

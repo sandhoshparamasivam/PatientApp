@@ -1,6 +1,5 @@
 package com.orane.icliniq.zoom;
 
-import android.app.KeyguardManager;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -10,21 +9,13 @@ import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.Ringtone;
-import android.media.RingtoneManager;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.PowerManager;
-import android.os.Vibrator;
-import android.provider.MediaStore;
 import android.provider.Settings;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.core.app.NotificationCompat;
-
 import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
@@ -37,6 +28,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.core.app.NotificationCompat;
 
 import com.flurry.android.FlurryAgent;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -58,8 +53,6 @@ import java.util.Map;
 import de.hdodenhof.circleimageview.CircleImageView;
 import me.drakeet.materialdialog.MaterialDialog;
 import us.zoom.sdk.MeetingError;
-import us.zoom.sdk.MeetingEvent;
-import us.zoom.sdk.MeetingOptions;
 import us.zoom.sdk.MeetingService;
 import us.zoom.sdk.MeetingServiceListener;
 import us.zoom.sdk.MeetingStatus;

@@ -1,8 +1,9 @@
 package com.orane.icliniq.Parallex.libs;
 
+import android.view.View;
+
 import androidx.collection.SparseArrayCompat;
 import androidx.viewpager.widget.ViewPager;
-import android.view.View;
 
 
 public class ParallaxViewPagerChangeListener implements ViewPager.OnPageChangeListener {

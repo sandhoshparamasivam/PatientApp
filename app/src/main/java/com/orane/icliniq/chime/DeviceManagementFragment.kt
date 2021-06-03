@@ -6,11 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.amazonaws.services.chime.sdk.meetings.audiovideo.AudioVideoFacade
 import com.amazonaws.services.chime.sdk.meetings.device.DeviceChangeObserver
@@ -19,8 +15,6 @@ import com.amazonaws.services.chime.sdk.meetings.device.MediaDeviceType
 import com.amazonaws.services.chime.sdk.meetings.utils.logger.ConsoleLogger
 import com.amazonaws.services.chime.sdk.meetings.utils.logger.LogLevel
 import com.orane.icliniq.R
-import com.orane.icliniq.chime.InMeetingActivity
-import java.lang.ClassCastException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

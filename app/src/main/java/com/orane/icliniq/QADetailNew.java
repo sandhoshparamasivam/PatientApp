@@ -14,7 +14,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import androidx.appcompat.widget.Toolbar;
 import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.method.LinkMovementMethod;
@@ -31,6 +30,8 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import androidx.appcompat.widget.Toolbar;
 
 import com.flurry.android.FlurryAgent;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;

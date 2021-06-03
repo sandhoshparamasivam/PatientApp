@@ -1,11 +1,12 @@
 package com.orane.icliniq.expand;
 
 import android.animation.ValueAnimator;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.AbsListView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by SilenceDut on 16/8/21.

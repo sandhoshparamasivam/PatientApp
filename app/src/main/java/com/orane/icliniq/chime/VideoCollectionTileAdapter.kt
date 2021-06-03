@@ -14,9 +14,7 @@ import com.orane.icliniq.R
 import com.orane.icliniq.chime.data.VideoCollectionTile
 import com.orane.icliniq.chime.inflate
 import com.orane.icliniq.chime.isLandscapeMode
-import kotlinx.android.synthetic.main.video_collection_item.view.attendee_name
-import kotlinx.android.synthetic.main.video_collection_item.view.on_tile_button
-import kotlinx.android.synthetic.main.video_collection_item.view.video_surface
+import kotlinx.android.synthetic.main.video_collection_item.view.*
 
 class VideoCollectionTileAdapter(
     private val videoCollectionTiles: MutableCollection<VideoCollectionTile>,

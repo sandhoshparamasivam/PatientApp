@@ -1,8 +1,8 @@
 package com.orane.icliniq;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.pes.androidmaterialcolorpickerdialog.ColorPicker;
 

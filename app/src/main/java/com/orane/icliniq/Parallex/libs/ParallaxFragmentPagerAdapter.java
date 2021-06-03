@@ -1,9 +1,10 @@
 package com.orane.icliniq.Parallex.libs;
 
+import android.view.ViewGroup;
+
 import androidx.collection.SparseArrayCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import android.view.ViewGroup;
 
 public abstract class ParallaxFragmentPagerAdapter extends FragmentPagerAdapter {
 

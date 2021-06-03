@@ -3,23 +3,13 @@ package com.orane.icliniq.utils;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.orane.icliniq.retrofitmodel.SlotTypeModel;
-import com.orane.icliniq.retrofitmodel.TimeslotModel;
 import com.orane.icliniq.walletdetails.WalletAmountModel;
 import com.orane.icliniq.walletdetails.WalletDetailsModel;
 
-import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.List;
 
-import okhttp3.ResponseBody;
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.http.Body;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -63,7 +53,7 @@ public interface RetrofitService {
     Call<JsonElement> getFeesForICQ7Days(@Query("token") String token,@Body JsonObject jsonObject);
 
    @GET("/sapp/prepareInv?")
-    Call<JsonObject> getPrepareInvoice(@Query("user_id") String user_id,@Query("inf_for") String inf_for,@Query("item_id")String item_id,@Query("os_type") String os_type,@Query("token")String token,@Query("enc") String enc);
+    Call<JsonObject> getPrepareInvoice(@Query("user_id") String user_id,@Query("inv_for") String inf_for,@Query("item_id")String item_id,@Query("os_type") String os_type,@Query("token")String token,@Query("enc") String enc);
 
 
     @POST("sapp/saveq?")

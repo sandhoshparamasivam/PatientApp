@@ -1,11 +1,12 @@
 package com.orane.icliniq.Parallex.libs;
 
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ScrollView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 public abstract class ParallaxViewPagerBaseActivity extends AppCompatActivity implements ScrollTabHolder {
 

@@ -21,11 +21,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.amazonaws.services.chime.sdk.meetings.audiovideo.AttendeeInfo
-import com.amazonaws.services.chime.sdk.meetings.audiovideo.AudioVideoFacade
-import com.amazonaws.services.chime.sdk.meetings.audiovideo.AudioVideoObserver
-import com.amazonaws.services.chime.sdk.meetings.audiovideo.SignalUpdate
-import com.amazonaws.services.chime.sdk.meetings.audiovideo.VolumeUpdate
+import com.amazonaws.services.chime.sdk.meetings.audiovideo.*
 import com.amazonaws.services.chime.sdk.meetings.audiovideo.audio.activespeakerdetector.ActiveSpeakerObserver
 import com.amazonaws.services.chime.sdk.meetings.audiovideo.audio.activespeakerpolicy.DefaultActiveSpeakerPolicy
 import com.amazonaws.services.chime.sdk.meetings.audiovideo.metric.MetricsObserver
@@ -41,7 +37,6 @@ import com.amazonaws.services.chime.sdk.meetings.utils.logger.LogLevel
 import com.amazonaws.services.chime.sdkdemo.VideoCollectionTileAdapter
 import com.google.android.material.tabs.TabLayout
 import com.orane.icliniq.R
-import com.orane.icliniq.chime.InMeetingActivity
 import com.orane.icliniq.chime.data.RosterAttendee
 import com.orane.icliniq.chime.data.VideoCollectionTile
 import kotlinx.coroutines.CoroutineScope

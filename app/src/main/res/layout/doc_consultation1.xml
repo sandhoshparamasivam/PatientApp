@@ -126,7 +126,6 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_query"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -756,7 +755,6 @@
 
 
     <Button
-        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -794,7 +792,6 @@
                     android:text="@string/selected_time" />
 
                 <Button
-                    android:id="@+id/time_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/pick_time" />
@@ -865,7 +862,6 @@
                     android:text="@string/selected_date" />
 
                 <Button
-                    android:id="@+id/date_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/pick_date" />

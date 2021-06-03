@@ -51,7 +51,6 @@
                         app:layout_collapseMode="parallax" />
 
                     <ImageView
-                        android:id="@+id/back"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@mipmap/leftback"
@@ -153,7 +152,6 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/tvget1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
@@ -480,7 +478,6 @@
 
 
                                 <LinearLayout
-                                    android:id="@+id/track"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="5dp"
@@ -489,7 +486,6 @@
                                     android:visibility="gone">
 
                                     <RadioButton
-                                        android:id="@+id/time_band"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_vertical|left"

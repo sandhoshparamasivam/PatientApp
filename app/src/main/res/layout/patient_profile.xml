@@ -321,7 +321,6 @@
                 </LinearLayout>
 
                 <RelativeLayout
-                    android:id="@+id/hl_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -389,7 +388,6 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/wt_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"

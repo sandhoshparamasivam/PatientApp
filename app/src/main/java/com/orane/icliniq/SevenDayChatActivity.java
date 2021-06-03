@@ -1,7 +1,5 @@
 package com.orane.icliniq;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -23,6 +21,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.flurry.android.FlurryAgent;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -62,7 +62,7 @@ public class SevenDayChatActivity extends AppCompatActivity {
     public static final String MyPREFERENCES = "MyPrefs";
     public static final String Login_Status = "Login_Status_key";
     public String family_list, wt_name, invId, invFee,   ht_name2, ht_val2, qid, draft_qid;
-    String personaIdVal, invStrFee, strFeesTxt, icq100IdVal,  infFor = "icq100",  mem_name, height_name, tit_id, age_val, gender_val, height_val, weight_val;
+    String personaIdVal, invStrFee, strFeesTxt, icq100IdVal,  infFor = "icq7days",  mem_name, height_name, tit_id, age_val, gender_val, height_val, weight_val;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,7 +138,7 @@ public class SevenDayChatActivity extends AppCompatActivity {
                                     {
                                         spec_val = "0";
                                     }
-                                    json.addProperty("is_icq100", "1");
+                                    json.addProperty("is_icq100", "3");
                                     json.addProperty("speciality", spec_val);
                                     json.addProperty("doctor_id", "0");
                                     json.addProperty("pqid", "0");
@@ -175,7 +175,7 @@ public class SevenDayChatActivity extends AppCompatActivity {
             JsonObject jsonObject = new JsonObject();
             jsonObject.addProperty("user_id", Model.id);
             jsonObject.addProperty("doctor_id", "0");
-            jsonObject.addProperty("item_type", "icq100");
+            jsonObject.addProperty("item_type", "icq7days");
             jsonObject.addProperty("all", "0");
 
         dialog.setMessage("Please wait");

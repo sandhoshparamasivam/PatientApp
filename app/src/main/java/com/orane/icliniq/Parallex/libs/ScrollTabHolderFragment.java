@@ -1,10 +1,11 @@
 package com.orane.icliniq.Parallex.libs;
 
 import android.app.Activity;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 import android.widget.AbsListView;
 import android.widget.ScrollView;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class ScrollTabHolderFragment extends Fragment implements ScrollTabHolder {

@@ -12,9 +12,7 @@ import com.amazonaws.services.chime.sdk.meetings.audiovideo.SignalStrength
 import com.amazonaws.services.chime.sdk.meetings.audiovideo.VolumeLevel
 import com.orane.icliniq.R
 import com.orane.icliniq.chime.data.RosterAttendee
-import kotlinx.android.synthetic.main.roster_view_attendee_row.view.activeSpeakerIndicator
-import kotlinx.android.synthetic.main.roster_view_attendee_row.view.attendeeName
-import kotlinx.android.synthetic.main.roster_view_attendee_row.view.attendeeVolume
+import kotlinx.android.synthetic.main.roster_view_attendee_row.view.*
 
 class RosterAdapter(
     private val roster: MutableCollection<RosterAttendee>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:foo="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mds_bluegrey_50"
@@ -69,7 +67,6 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/lang_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="?android:attr/selectableItemBackground"
@@ -150,7 +147,6 @@
                         android:src="@mipmap/user_default" />
 
                     <LinearLayout
-                        android:id="@+id/mid_section"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -199,7 +195,6 @@
 
 
             <TextView
-                android:id="@+id/tv_profile_tit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -432,7 +427,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/tv_myvideos"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -495,7 +489,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/tv_bookings"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -556,7 +549,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/tv_fam_profile"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -708,7 +700,6 @@
 
             </LinearLayout>
             <TextView
-                android:id="@+id/theme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -881,7 +872,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/tv_suggest_layout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -1063,7 +1053,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/finddoc"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -1075,7 +1064,6 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/finddoc2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"

@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:custom="http://schemas.android.com/tools"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -44,7 +43,6 @@
             android:paddingRight="3dp">
 
             <ImageView
-                android:id="@+id/tit_img"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:scaleType="centerCrop"
@@ -577,7 +575,6 @@
                         android:orientation="vertical">
 
                         <LinearLayout
-                            android:id="@+id/icq100_layout"
                             android:layout_width="150dp"
                             android:elevation="10dp"
                             android:layout_height="wrap_content"
@@ -666,7 +663,6 @@
                         android:orientation="vertical">
 
                         <LinearLayout
-                            android:id="@+id/icq50_layout"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_toRightOf="@+id/card_view2"

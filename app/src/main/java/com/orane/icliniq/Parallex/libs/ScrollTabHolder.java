@@ -1,8 +1,9 @@
 package com.orane.icliniq.Parallex.libs;
 
-import androidx.recyclerview.widget.RecyclerView;
 import android.widget.AbsListView;
 import android.widget.ScrollView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public interface ScrollTabHolder {
 

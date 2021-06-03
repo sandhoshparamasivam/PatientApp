@@ -299,7 +299,6 @@
                     android:src="@mipmap/line1" />
 
                 <LinearLayout
-                    android:id="@+id/answer_section"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -421,7 +420,6 @@
 
 
                             <ImageView
-                                android:id="@+id/img_arr"
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"
                                 android:layout_alignParentRight="true"

@@ -2,7 +2,6 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/mds_bluegrey_50">
@@ -27,7 +26,6 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:id="@+id/totlay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/img_next"
@@ -53,7 +51,6 @@
                             app:border_width="0.5dp" />
 
                         <ImageView
-                            android:id="@+id/imageview_poster2"
                             android:layout_width="57dp"
                             android:layout_height="57dp"
                             android:layout_marginRight="8dp"
@@ -237,7 +234,6 @@
 
 
                 <LinearLayout
-                    android:id="@+id/left_lay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -279,7 +275,6 @@
                         android:visibility="gone" />
 
                     <TextView
-                        android:id="@+id/tv_lefttext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"

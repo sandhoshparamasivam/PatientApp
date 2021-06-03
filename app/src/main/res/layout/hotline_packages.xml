@@ -36,7 +36,6 @@
                 android:visibility="gone">
 
                 <ImageView
-                    android:id="@+id/back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/leftback"
@@ -97,7 +96,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/title_subs_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -455,7 +453,6 @@
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/basic_holder_radio_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -464,7 +461,6 @@
                 android:textColor="@android:color/black" />
 
             <RadioButton
-                android:id="@+id/list_holder_radio_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -473,7 +469,6 @@
                 android:textColor="@android:color/black" />
 
             <RadioButton
-                android:id="@+id/grid_holder_radio_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -558,21 +553,18 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button_bottom"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="button_bottom" />
 
             <Button
-                android:id="@+id/button_center"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="button_center" />
 
             <Button
-                android:id="@+id/button_top"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

@@ -436,7 +436,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tv_tit7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -448,7 +447,6 @@
                         android:textStyle="normal" />
 
                     <TextView
-                        android:id="@+id/tv_tit8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"

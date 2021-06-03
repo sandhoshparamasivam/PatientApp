@@ -526,7 +526,6 @@
                                 android:textSize="14sp" />
 
                             <View
-                                android:id="@+id/line2"
                                 android:layout_width="0.8dp"
                                 android:layout_height="50dp"
                                 android:layout_below="@+id/tv_or"

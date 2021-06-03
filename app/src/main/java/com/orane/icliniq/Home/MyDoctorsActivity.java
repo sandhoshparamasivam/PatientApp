@@ -9,11 +9,6 @@ import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,6 +23,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.Toolbar;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.allattentionhere.fabulousfilter.AAH_FabulousFragment;
 import com.flurry.android.FlurryAgent;
 import com.github.ksoichiro.android.observablescrollview.ObservableListView;
@@ -35,11 +33,8 @@ import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCal
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.kissmetrics.sdk.KISSmetricsAPI;
-import com.orane.icliniq.AskQuery1;
 import com.orane.icliniq.DoctorProfileActivity;
 import com.orane.icliniq.HotlinePackagesActivity;
-import com.orane.icliniq.IntroScreenActivity;
 import com.orane.icliniq.Invite_doctors;
 import com.orane.icliniq.LoginActivity;
 import com.orane.icliniq.Model.BaseActivity;

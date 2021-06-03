@@ -300,7 +300,6 @@
 
 
                                 <LinearLayout
-                                    android:id="@+id/track"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="5dp"
@@ -309,7 +308,6 @@
                                     android:visibility="gone">
 
                                     <RadioButton
-                                        android:id="@+id/time_band"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_vertical|left"
@@ -518,7 +516,6 @@
                 android:visibility="invisible" />
 
             <Button
-                android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -561,7 +558,6 @@
                     android:text="@string/selected_time" />
 
                 <Button
-                    android:id="@+id/time_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/pick_time" />
@@ -632,7 +628,6 @@
                     android:text="@string/selected_date" />
 
                 <Button
-                    android:id="@+id/date_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/pick_date" />
