@@ -39,7 +39,7 @@ import com.orane.icliniq.network.JSONParser;
 import com.orane.icliniq.network.SetLanguage;
 import com.orane.icliniq.network.ShareIntent;
 import com.orane.icliniq.walletdetails.WalletDetailsActivity;
-import com.zipow.videobox.MyProfileActivity;
+//import com.zipow.videobox.MyProfileActivity;
 
 import org.json.JSONObject;
 
@@ -399,9 +399,9 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(getActivity(), MyProfileActivity.class);
-                startActivity(i);
-                getActivity().overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+//                Intent i = new Intent(getActivity(), MyProfileActivity.class);
+//                startActivity(i);
+//                getActivity().overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 
 /*
                 //------------ Tracker ------------------------

@@ -10,6 +10,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -297,14 +298,17 @@ public class LoginActivity extends Activity {
                     }
 
                     System.out.println("Model.browser_country----" + Model.browser_country);
+                    Log.e("user id",Model.id+" "+ userid);
 
+                    Model.userid=userid;
+                    Log.e("userid",Model.userid+" ");
                     //============================================================
                     SharedPreferences.Editor editor = sharedpreferences.edit();
                     editor.putString(Login_Status, "1");
                     editor.putString(isValid, Model.isValid);
                     editor.putString(user_name, Model.name);
                     editor.putString(Name, Model.name);
-                    editor.putString(id, userid);
+                    editor.putString(id, Model.id);
                     editor.putString(browser_country, Model.browser_country);
                     editor.putString(email, Model.email);
                     editor.putString(fee_q, Model.fee_q);

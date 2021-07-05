@@ -1,15 +1,25 @@
 package com.orane.icliniq;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.bumptech.glide.Glide;
 import com.orane.icliniq.Model.Model;
 import com.orane.icliniq.Model.MultipartEntity2;
 
@@ -27,7 +37,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
-public class UploadToHotlineServer extends Activity {
+public class UploadToHotlineServer extends AppCompatActivity {
 
     InputStream is = null;
     String serverResponseMessage, contentAsString,upload_response;
@@ -39,33 +49,71 @@ public class UploadToHotlineServer extends Activity {
     String upLoadServerUri = null;
     public String fullpath, selqid;
     public String fpath, fname;
-
+        ImageView full_image;
+        Uri imagesUri;
+        private ScaleGestureDetector mScaleGestureDetector;
+        private float mScaleFactor = 1.0f;
+        Toolbar toolbar;
+        Button btnCancel,btnUpload;
+        TextView fileText;
+        LinearLayout lytSubmit;
+        RelativeLayout lytUpload;
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_to_server);
 
+        full_image=findViewById(R.id.full_Image);
+        toolbar  = findViewById(R.id.toolbar);
+        btnUpload  = findViewById(R.id.btnUpload);
+        fileText  = findViewById(R.id.fileText);
+        lytUpload  = findViewById(R.id.lytUpload);
+        lytSubmit  = findViewById(R.id.lytSubmit);
+        lytUpload.setVisibility(View.VISIBLE);
+        mScaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
 
-        uploadButton = (Button) findViewById(R.id.uploadButton);
-        messageText = (TextView) findViewById(R.id.messageText);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //What to do on back clicked
+                finish();
+            }
+        });
 
         try {
             Intent intent = getIntent();
             fpath = intent.getStringExtra("KEY_path");
             fname = intent.getStringExtra("KEY_filename");
             selqid = intent.getStringExtra("selqid");
-
-            messageText.setText("Uploading file path :" + fpath);
-
+            Model.fileName=fname;
+            if (fpath!=null && (fpath.contains(".jpg") || fpath.contains(".jpeg") || fpath.contains(".png") || fpath.contains(".PNG"))){
+                lytUpload.setVisibility(View.VISIBLE);
+                fileText.setVisibility(View.GONE);
+                fileText.setText(fname);
+                Glide.with(this).load(fpath).into((full_image));
+            }else{
+                lytUpload.setVisibility(View.GONE);
+                fileText.setVisibility(View.VISIBLE);
+                fileText.setText(fname);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        btnUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                upLoadServerUri = Model.BASE_URL + "/sapp/upload?qid=" + selqid + "&hline=1&token=" + Model.token + "&enc=1";
+                System.out.println("upLoadServerUri---------------------" + upLoadServerUri);
 
-        upLoadServerUri = Model.BASE_URL + "/sapp/upload?qid=" + selqid + "&hline=1&token=" + Model.token + "&enc=1";
-        System.out.println("upLoadServerUri---------------------" + upLoadServerUri);
+                new JSONAsyncTask().execute("");
+            }
+        });
 
-        new JSONAsyncTask().execute("");
 
       /*  dialog = ProgressDialog.show(UploadToHotlineServer.this, "", "Uploading file...", true);
         new Thread(new Runnable() {
@@ -80,6 +128,23 @@ public class UploadToHotlineServer extends Activity {
             }
         }).start();*/
     }
+    @Override
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        mScaleGestureDetector.onTouchEvent(motionEvent);
+        return true;
+    }
+
+    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
+        @Override
+        public boolean onScale(ScaleGestureDetector scaleGestureDetector) {
+            mScaleFactor *= scaleGestureDetector.getScaleFactor();
+            mScaleFactor = Math.max(0.1f,
+                    Math.min(mScaleFactor, 10.0f));
+            full_image.setScaleX(mScaleFactor);
+            full_image.setScaleY(mScaleFactor);
+            return true;
+        }
+    }
 
     private class JSONAsyncTask extends AsyncTask<String, Void, Boolean> {
 
@@ -88,6 +153,11 @@ public class UploadToHotlineServer extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+
+            dialog = new ProgressDialog(UploadToHotlineServer.this);
+            dialog.setMessage("Please wait..");
+            dialog.show();
+            dialog.setCancelable(false);
         }
 
         @Override
@@ -140,7 +210,7 @@ public class UploadToHotlineServer extends Activity {
                 });
             }
 
-
+            dialog.dismiss();
             finish();
         }
     }

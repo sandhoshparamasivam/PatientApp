@@ -337,7 +337,7 @@ public class HotlineChatViewActivity extends AppCompatActivity {
                 .setImagesFolderName("Attachments")
                 .setCopyTakenPhotosToPublicGalleryAppFolder(true)
                 .setCopyPickedImagesToPublicGalleryAppFolder(true)
-                .setAllowMultiplePickInGallery(true);
+                .setAllowMultiplePickInGallery(false);
         //------------------ Initialize File Attachment ---------------------------------
 
 
@@ -365,23 +365,6 @@ public class HotlineChatViewActivity extends AppCompatActivity {
                 }
 
 
-               /* try {
-                    Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                    startActivityForResult(cameraIntent, CAMERA_REQUEST);
-
-
-                    //----------- Flurry -------------------------------------------------
-                    Map<String, String> articleParams = new HashMap<String, String>();
-                    articleParams.put("android.patient.Qid:", selqid);
-                    articleParams.put("android.patient.Doctor_id:", Doctor_id);
-                    articleParams.put("android.patient.follouwupcode:", follouwupcode);
-                    FlurryAgent.logEvent("android.patient.Hotline_Chat_TakePhoto", articleParams);
-                    //----------- Flurry -------------------------------------------------
-
-                } catch (Exception e) {
-                    System.out.println("Exception---Camera---123--" + e.toString());
-                    e.printStackTrace();
-                }*/
 
             }
         });
@@ -713,6 +696,7 @@ public class HotlineChatViewActivity extends AppCompatActivity {
                 //---------------------------------------------------
                 String full_url = Model.BASE_URL + "sapp/viewq?id=" + selqid + "&user_id=" + (Model.id) + "&format=json&token=" + Model.token + "&enc=1&isAFiles=1";
                 System.out.println("full_url-------------" + full_url);
+                Log.e("full_url",full_url+" ");
                 new JSONAsyncTask().execute(full_url);
                 //---------------------------------------------------
             }
@@ -832,6 +816,7 @@ public class HotlineChatViewActivity extends AppCompatActivity {
             try {
 
                 str_response = new JSONParser().getJSONString(urls[0]);
+                Log.e("str_response",str_response+" ");
 //                System.out.println("str_response--------------" + str_response);
 
 /*                JSONParser jParser = new JSONParser();
@@ -1035,9 +1020,6 @@ public class HotlineChatViewActivity extends AppCompatActivity {
                                         tv_labtest.setVisibility(View.GONE);
                                         tvt_labtest.setVisibility(View.GONE);
                                     }
-                                    //---------------------lab test---------------------------------------------------
-
-                                    //myLayout.addView(vi);
 
                                 } else {
                                     tv_curmedi.setVisibility(View.GONE);
@@ -1051,8 +1033,6 @@ public class HotlineChatViewActivity extends AppCompatActivity {
                                     tvt_morecomp.setVisibility(View.GONE);
                                     tv_morecomp.setVisibility(View.GONE);
 
-
-                                    //myLayout.addView(vi);
                                 }
 
                                 //---------------- Files ---------------------------------------
@@ -1060,65 +1040,51 @@ public class HotlineChatViewActivity extends AppCompatActivity {
 
                                     layout_attachfile.setVisibility(View.VISIBLE);
 
-//                                    System.out.println("files_text------" + files_text);
-                                    jarray_files = jsononjsec.getJSONArray("q_files");
+                                   jarray_files = jsononjsec.getJSONArray("q_files");
 
-//                                    System.out.println("jsonobj_items------" + jarray_files.toString());
-//                                    System.out.println("jarray_files.length()------" + jarray_files.length());
-
-                                    attachfile.setText("Attached " + jarray_files.length() + " File(s)");
+                                  attachfile.setText("Attached " + jarray_files.length() + " File(s)");
 
                                     attach_file_text = "";
 
                                     for (int m = 0; m < jarray_files.length(); m++) {
                                         jsonobj_files = jarray_files.getJSONObject(m);
-
-//                                        System.out.println("jsonobj_files--" + m + " ----" + jsonobj_files.toString());
-
+                                        int k=m;
+                                        Log.e("k",k+" ");
                                         file_user_id = jsonobj_files.getString("user_id");
                                         file_doctype = jsonobj_files.getString("doctype");
                                         file_file = jsonobj_files.getString("file");
                                         file_ext = jsonobj_files.getString("ext");
                                         file_url = jsonobj_files.getString("file_url");
+                                        Log.e("file_url",file_url+" ");
+                                        Log.e("file_doctype",file_doctype+" ");
+                                        Log.e("file_file",file_file+" ");
 
-                                        //------------------------ File Attached Text --------------------------------
-                                        if (attach_file_text.equals("")) {
-                                            attach_file_text = file_url;
-                                            System.out.println("attach_file_text-------" + attach_file_text);
-                                        } else {
-                                            attach_file_text = attach_file_text + "###" + file_url;
-                                            System.out.println("attach_file_text-------" + attach_file_text);
+                                        attach_file_text = file_url;
+
+                                        String file_full__url;
+                                        if (attach_file_text.contains("?")) {
+                                            file_full__url = attach_file_text + "&token=" + Model.token;
+                                         } else {
+                                            file_full__url = attach_file_text + "?token=" + Model.token;
                                         }
-                                        //------------------------ File Attached Text --------------------------------
-
-//                                        System.out.println("file_user_id--------" + file_user_id);
-//                                        System.out.println("file_doctype--------" + file_doctype);
-//                                        System.out.println("filename--------" + file_file);
-//                                        System.out.println("file_ext--------" + file_ext);
-//                                        System.out.println("file_url--------" + file_url);
-
-                                        vi_files = getLayoutInflater().inflate(R.layout.attached_file_list, null);
+                                         vi_files = getLayoutInflater().inflate(R.layout.attached_file_list, null);
                                         ImageView file_image = vi_files.findViewById(R.id.file_image);
-                                        //tv_filename = (TextView) vi_files.findViewById(R.id.tv_filename);
+
                                         tv_ext = vi_files.findViewById(R.id.tv_ext);
                                         tv_userid = vi_files.findViewById(R.id.tv_userid);
-                                        TextView tv_filename_new = vi_files.findViewById(R.id.tv_filename);
-                                    Log.e("url",file_url+" ");
-                                        //tv_filename.setText(Html.fromHtml(file_url));
-                                        //tv_filename.setText(attach_file_text);
+                                        TextView tv_fname = vi_files.findViewById(R.id.tv_fname);
+                                       Log.e("file___url",file_full__url+" ");
+                                        tv_filename.setText("Attachment"+" "+k);
+                                        tv_fname.setText(file_full__url);
 
-//                                        System.out.println("Final attach_file_text-------" + attach_file_text);
-                                        Glide.with(HotlineChatViewActivity.this).load(file_url).into(file_image);
+                                        Glide.with(HotlineChatViewActivity.this).load(file_full__url).into(file_image);
 
-//                                        tv_filename_new.setText(file_url);
                                         tv_ext.setText(file_ext);
                                         tv_userid.setText(file_user_id);
 
                                         files_layout.addView(vi_files);
                                         files_layout.setVisibility(View.VISIBLE);
                                     }
-
-                                    tv_filename.setText(files_text);
 
                                     files_layout.setVisibility(View.VISIBLE);
                                 } else {
@@ -1181,10 +1147,6 @@ public class HotlineChatViewActivity extends AppCompatActivity {
                                 } else {
                                     edt_chat_msg.setText(question);
                                 }
-
-//                                System.out.println("question------------" + question);
-//                                System.out.println("created_at------------" + created_at);
-
 
                                 if ((answer.length()) > 2) {
 
@@ -1278,13 +1240,6 @@ public class HotlineChatViewActivity extends AppCompatActivity {
 
                                             }
                                         }
-
-//                                        System.out.println("answer-----" + answerval);
-//                                        System.out.println("answer_id-----" + answerval_id);
-//                                        System.out.println("created_at-----" + created_at);
-//                                        System.out.println("Doctor_id-----" + Doctor_id);
-//                                        System.out.println("answer_ext_text-----" + answer_ext_text);
-//                                        System.out.println("answer_ext_text.length()-----" + answer_ext_text.length());
 
                                         answerval = answerval.replace("\\\n", System.getProperty("line.separator"));
 
@@ -1471,7 +1426,6 @@ public class HotlineChatViewActivity extends AppCompatActivity {
 
         try {
             chat_msg = chat_msg_text;
-//            System.out.println("chat_msg------------" + chat_msg);
 
             if (!chat_msg.equals("")) {
 
@@ -1524,8 +1478,7 @@ public class HotlineChatViewActivity extends AppCompatActivity {
                 //-------- Auto Scroll to Bottom------------------
             }
         } catch (Exception e) {
-//            System.out.println("Exception---add text---" + e.toString());
-            e.printStackTrace();
+           e.printStackTrace();
         }
     }
 
@@ -1533,7 +1486,6 @@ public class HotlineChatViewActivity extends AppCompatActivity {
 
         try {
             chat_msg = Model.push_msg;
-//            System.out.println("chat_msg------------" + chat_msg);
 
             if (!chat_msg_text.equals("")) {
 
@@ -1543,8 +1495,6 @@ public class HotlineChatViewActivity extends AppCompatActivity {
                 ans_layout = vi_ans.findViewById(R.id.ans_layout);
                 tv_answer = vi_ans.findViewById(R.id.tv_answer);
                 tv_datetime = vi_ans.findViewById(R.id.tv_datetime);
-
-                //Picasso.with(getApplicationContext()).load(doc_photo_url).placeholder(R.mipmap.doctor_icon).error(R.mipmap.logo).into(imageview_poster);
 
                 TextView tvt_probcause = vi_ans.findViewById(R.id.tvt_probcause);
                 TextView tv_probcause = vi_ans.findViewById(R.id.tv_probcause);
@@ -1678,7 +1628,7 @@ public class HotlineChatViewActivity extends AppCompatActivity {
                 tvt_morecomp.setVisibility(View.GONE);
                 tv_morecomp.setVisibility(View.GONE);
 
-                tv_query.setText("File Uploaded: " + (Model.upload_files));
+                tv_query.setText("File Uploaded: " + (Model.fileName));
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
                 String currentTimeStamp = dateFormat.format(new Date());
@@ -1696,6 +1646,7 @@ public class HotlineChatViewActivity extends AppCompatActivity {
                 //-------- Auto Scroll to Bottom------------------
 
                 Model.upload_files = "";
+                Model.fileName = "";
 
             }
         } catch (Exception e) {
@@ -1710,7 +1661,8 @@ public class HotlineChatViewActivity extends AppCompatActivity {
         try {
 
             TextView tv_filename = v.findViewById(R.id.tv_filename);
-            String file_name = tv_filename.getText().toString();
+            TextView tv_fname = v.findViewById(R.id.tv_fname);
+            String file_name = tv_fname.getText().toString();
             String file_ext = tv_ext.getText().toString();
             String file_userid = tv_userid.getText().toString();
 
@@ -1718,20 +1670,24 @@ public class HotlineChatViewActivity extends AppCompatActivity {
 
             //String url = Model.BASE_URL + "tools/downloadFile/user_id/" + (file_userid) + "/doctype/query_attachment?file=" + file_name + "&ext=" + file_ext + "&isapp=1";
 //            System.out.println("File url-------------" + file_name);
-
+            Log.e("file_name",file_name+" ");
             String file_full__url = "";
 
-            if ("?".contains(file_name)) {
-                file_full__url = file_name + "&token=" + Model.token;
+            if (attach_file_text.contains("?")) {
+                file_full__url = attach_file_text + "&token=" + Model.token;
             } else {
-                file_full__url = file_name + "?token=" + Model.token;
+                file_full__url = attach_file_text + "?token=" + Model.token;
             }
-
+            Log.e("file_full__url",file_full__url+" ");
 //            System.out.println("file_full__url-------------" + file_full__url);
 
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(file_full__url));
             startActivity(i);
+
+//            Intent intent=new Intent(HotlineChatViewActivity.this,ImagePreviewAct.class);
+//            intent.putExtra("uri",file_name);
+//            startActivity(intent);
 
 
 /*            Intent i = new Intent(Intent.ACTION_VIEW);
@@ -2085,7 +2041,8 @@ public class HotlineChatViewActivity extends AppCompatActivity {
             selectedPath = (returnedPhotos.get(i).toString());
             selectedfilename = (returnedPhotos.get(i)).getName();
 
-
+        Log.e("selectedfilename",selectedfilename+" ");
+        Log.e("selectedPath",selectedPath+" ");
             Intent intent2 = new Intent(HotlineChatViewActivity.this, UploadToHotlineServer.class);
             intent2.putExtra("KEY_path", selectedPath);
             intent2.putExtra("KEY_filename", selectedfilename);

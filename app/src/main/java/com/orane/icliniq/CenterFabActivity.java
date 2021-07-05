@@ -81,6 +81,11 @@ public class CenterFabActivity extends AppCompatActivity {
     SharedPreferences sharedpreferences;
     public static final String MyPREFERENCES = "MyPrefs";
     public static final String id = "id";
+    public static final String Login_Status = "Login_Status_key";
+    public static final String user_name = "user_name_key";
+    public static final String Name = "Name_key";
+    public static final String DEVICE_TOKEN = "device_token";
+    public static final String isValid = "isValid";
 
 
     @Override
@@ -90,30 +95,10 @@ public class CenterFabActivity extends AppCompatActivity {
 
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
-/*      //============================================================
-        SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putString(id, "246125");
-        editor.apply();
-        Model.id = "246125";
-        //============================================================
-*/
+        Model.name = sharedpreferences.getString(Name, "");
+        Model.id = sharedpreferences.getString(id, "");
 
-/*
-        //--------------------------------------------------------------------
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-            getSupportActionBar().setTitle("Ask a Query");
-        }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.app_color2));
-        }
-        //----------- initialize --------------------------------------
-*/
         //mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         //------------ Google firebase Analitics--------------------
@@ -122,29 +107,37 @@ public class CenterFabActivity extends AppCompatActivity {
         params.putString("User", Model.id);
         mFirebaseAnalytics.logEvent("Home_Screen", params);
         //------------ Google firebase Analitics--------------------
-//        Log.e("device token",Model.device_token+" " );
-        if (Model.device_token==null){
+        Model.device_token = sharedpreferences.getString(DEVICE_TOKEN, "");
+//        if (Model.device_token==null){
             FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(CenterFabActivity.this, new OnSuccessListener<InstanceIdResult>() {
                 @Override
                 public void onSuccess(InstanceIdResult instanceIdResult) {
                     String token = instanceIdResult.getToken();
-                    System.out.println("device_token---------"+token);
-                    Log.e("FCM Token", token);
                     Model.device_token=token;
+                    Log.e("device_token",Model.device_token+" " );
+                    String gcm_url = Model.BASE_URL + "sapp/updateDeviceRegId?reg_id=" + Model.device_token + "&user_id=" + (Model.id) + "&v=" + Model.App_ver_slno + "&token=" + Model.token;
+                    Log.e("gcm_url 1",gcm_url+" " );
+
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    editor.putString(DEVICE_TOKEN, token);
+                    editor.apply();
+//                    String gcm_url = Model.BASE_URL + "sapp/updateDeviceRegId?reg_id=" + Model.device_token + "&user_id=" + Model.id + "&v=" + Model.App_ver_slno + "&token=" + Model.token;
+                    System.out.println("gcm_url---------" + gcm_url);
+                    new JSON_GCM_Regid().execute(gcm_url);
+
                 }
             });
-        }
-        Log.e("device Token",Model.device_token+" " );
-
-        if ((Model.device_token) != null && !(Model.device_token).isEmpty() && !(Model.device_token).equals("null") && !(Model.device_token).equals("")) {
-
-            Log.e("device token",Model.device_token);
-            //-------------------------------------------------------------------
-            String gcm_url = Model.BASE_URL + "sapp/updateDeviceRegId?reg_id=" + Model.device_token + "&user_id=" + (Model.id) + "&v=" + Model.App_ver_slno + "&token=" + Model.token;
-            System.out.println("gcm_url---------" + gcm_url);
-            new JSON_GCM_Regid().execute(gcm_url);
-            //-------------------------------------------------------------------
-        }
+//        }
+//        Log.e("device token 2",Model.device_token);
+//
+//        if ((Model.device_token) != null && !(Model.device_token).isEmpty() && !(Model.device_token).equals("null") && !(Model.device_token).equals("")) {
+//
+//            Log.e("device token 2",Model.device_token);
+//            String gcm_url = Model.BASE_URL + "sapp/updateDeviceRegId?reg_id=" + Model.device_token + "&user_id=" + Model.id + "&v=" + Model.App_ver_slno + "&token=" + Model.token;
+//            System.out.println("gcm_url---------" + gcm_url);
+//            new JSON_GCM_Regid().execute(gcm_url);
+//
+//        }
 
         font_reg = Typeface.createFromAsset(getAssets(), Model.font_name);
         fonr_bold = Typeface.createFromAsset(getAssets(), Model.font_name_bold);
@@ -643,6 +636,7 @@ public class CenterFabActivity extends AppCompatActivity {
             try {
                 str_response = new JSONParser().getJSONString(urls[0]);
                 System.out.println("str_response--------------" + str_response);
+                Log.e("response",str_response+" ");
                 return true;
             } catch (Exception e) {
                 e.printStackTrace();
@@ -655,6 +649,7 @@ public class CenterFabActivity extends AppCompatActivity {
 
         protected void onPostExecute(Boolean result) {
             System.out.println("str_response--------------" + str_response);
+            Log.e("str_response",str_response+" ");
         }
     }
 

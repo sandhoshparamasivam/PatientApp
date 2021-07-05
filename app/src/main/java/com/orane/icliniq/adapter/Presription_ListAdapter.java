@@ -114,13 +114,17 @@ public class Presription_ListAdapter extends ArrayAdapter<Item> {
         if (holder.imageview_poster != null) {
             if (objBean.getTy().equals("Tablet")) {
                 System.out.println("objBean.getTy()----------" + objBean.getTy());
-                Picasso.with(getContext()).load(R.mipmap.tablet_icon).placeholder(R.drawable.zm_image_placeholder).error(R.mipmap.logo).into(holder.imageview_poster);
+//                Picasso.with(getContext()).load(R.mipmap.tablet_icon).placeholder(R.drawable.zm_image_placeholder).error(R.mipmap.logo).into(holder.imageview_poster);
+               Picasso.with(getContext()).load(R.mipmap.tablet_icon).error(R.mipmap.logo).into(holder.imageview_poster);
             } else if (objBean.getTy().equals("Cream")) {
-                Picasso.with(getContext()).load(R.mipmap.cream_icon).placeholder(R.drawable.zm_image_placeholder).error(R.mipmap.logo).into(holder.imageview_poster);
+//                Picasso.with(getContext()).load(R.mipmap.cream_icon).placeholder(R.drawable.zm_image_placeholder).error(R.mipmap.logo).into(holder.imageview_poster);
+                Picasso.with(getContext()).load(R.mipmap.cream_icon).error(R.mipmap.logo).into(holder.imageview_poster);
             } else if (objBean.getTy().equals("Lotion")) {
-                Picasso.with(getContext()).load(R.mipmap.lotion_icon).placeholder(R.drawable.zm_image_placeholder).error(R.mipmap.logo).into(holder.imageview_poster);
+//                Picasso.with(getContext()).load(R.mipmap.lotion_icon).placeholder(R.drawable.zm_image_placeholder).error(R.mipmap.logo).into(holder.imageview_poster);
+               Picasso.with(getContext()).load(R.mipmap.lotion_icon).error(R.mipmap.logo).into(holder.imageview_poster);
             } else {
-                Picasso.with(getContext()).load(R.mipmap.medicine_icon).placeholder(R.drawable.zm_image_placeholder).error(R.mipmap.logo).into(holder.imageview_poster);
+//                Picasso.with(getContext()).load(R.mipmap.medicine_icon).placeholder(R.drawable.zm_image_placeholder).error(R.mipmap.logo).into(holder.imageview_poster);
+                Picasso.with(getContext()).load(R.mipmap.medicine_icon).error(R.mipmap.logo).into(holder.imageview_poster);
             }
         }
 

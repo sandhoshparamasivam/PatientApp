@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.AudioAttributes;
@@ -24,8 +25,8 @@ import com.google.firebase.messaging.RemoteMessage;
 import com.orane.icliniq.Model.Model;
 import com.orane.icliniq.Sqlite.Contact;
 import com.orane.icliniq.Sqlite.DatabaseHandler;
-import com.orane.icliniq.zoom.Consultation_View;
-import com.orane.icliniq.zoom.Video_Calling_Activity;
+//import com.orane.icliniq.zoom.Consultation_View;
+//import com.orane.icliniq.zoom.Video_Calling_Activity;
 
 import org.json.JSONObject;
 
@@ -36,7 +37,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
@@ -52,11 +52,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        Log.e("push notification","Received");
-        System.out.println("Push Noti Msg Received------------------" + remoteMessage.getData().toString());
-        System.out.println("Push Noti Msg Received------------------" + remoteMessage.toString());
 
-
+        Log.e("push received Patient","received");
         if (remoteMessage.getNotification() != null) {
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
         }
@@ -153,7 +150,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 System.out.println("Patient doc_sp-----" + Model.doc_sp);
             }
 
-            // Notification();
+             Notification();
 
             //------------ Google firebase Analitics--------------------
             Model.mFirebaseAnalytics = FirebaseAnalytics.getInstance(MyFirebaseMessagingService.this);
@@ -180,65 +177,65 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 */
 
 
-        try {
-
-            if ((Model.fcode) != null && !(Model.fcode).isEmpty() && !(Model.fcode).equals("null") && !(Model.fcode).equals("")) {
-                if ((Model.screen_status) != null && !(Model.screen_status).isEmpty() && !(Model.screen_status).equals("null") && !(Model.screen_status).equals("")) {
-                    if ((Model.screen_status).equals("true")) {
-                        //Model.fcode = push_msg;
-                        System.out.println("Patient Push Model.screen_status-----" + Model.screen_status);
-                        System.out.println("Patient Push Blocked-sent to View-----");
-                    } else {
-                        System.out.println("Patient Push Model.screen_status-----" + Model.screen_status);
-                        System.out.println("Patient Push one Exception------");
-                        if ((push_type).equals("30")) {
-                            i = new Intent(this, Video_Calling_Activity.class);
-                            i.putExtra("tv_cons_id", appt_id);
-                            i.putExtra("doc_photo", doc_photo);
-                            i.putExtra("doc_name", doc_name);
-                            i.putExtra("doc_sp", doc_sp);
-                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(i);
-                        } else {
-                            Notification();
-                        }
-                    }
-                } else {
-                    System.out.println("Patient Push Two Exception------");
-                    System.out.println("Patient Push Model.screen_status-----" + Model.screen_status);
-                    if ((push_type).equals("30")) {
-                        i = new Intent(this, Video_Calling_Activity.class);
-                        i.putExtra("tv_cons_id", appt_id);
-                        i.putExtra("doc_photo", doc_photo);
-                        i.putExtra("doc_name", doc_name);
-                        i.putExtra("doc_sp", doc_sp);
-                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(i);
-                    } else {
-                        Notification();
-                    }
-                }
-            } else {
-                System.out.println("Patient Push Three------");
-                System.out.println("Patient Push screen_status-----" + Model.screen_status);
-
-                if ((push_type).equals("30")) {
-                    i = new Intent(this, Video_Calling_Activity.class);
-                    i.putExtra("tv_cons_id", appt_id);
-                    i.putExtra("doc_photo", doc_photo);
-                    i.putExtra("doc_name", doc_name);
-                    i.putExtra("doc_sp", doc_sp);
-                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(i);
-                } else {
-                    Notification();
-                }
-            }
-
-        } catch (Exception e) {
-            System.out.println("Push Exception------" + e.toString());
-            e.printStackTrace();
-        }
+//        try {
+//
+//            if ((Model.fcode) != null && !(Model.fcode).isEmpty() && !(Model.fcode).equals("null") && !(Model.fcode).equals("")) {
+//                if ((Model.screen_status) != null && !(Model.screen_status).isEmpty() && !(Model.screen_status).equals("null") && !(Model.screen_status).equals("")) {
+//                    if ((Model.screen_status).equals("true")) {
+//                        //Model.fcode = push_msg;
+//                        System.out.println("Patient Push Model.screen_status-----" + Model.screen_status);
+//                        System.out.println("Patient Push Blocked-sent to View-----");
+//                    } else {
+//                        System.out.println("Patient Push Model.screen_status-----" + Model.screen_status);
+//                        System.out.println("Patient Push one Exception------");
+//                        if ((push_type).equals("30")) {
+////                            i = new Intent(this, Video_Calling_Activity.class);
+////                            i.putExtra("tv_cons_id", appt_id);
+////                            i.putExtra("doc_photo", doc_photo);
+////                            i.putExtra("doc_name", doc_name);
+////                            i.putExtra("doc_sp", doc_sp);
+////                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+////                            startActivity(i);
+//                        } else {
+//                            Notification();
+//                        }
+//                    }
+//                } else {
+//                    System.out.println("Patient Push Two Exception------");
+//                    System.out.println("Patient Push Model.screen_status-----" + Model.screen_status);
+//                    if ((push_type).equals("30")) {
+//                        i = new Intent(this, Video_Calling_Activity.class);
+//                        i.putExtra("tv_cons_id", appt_id);
+//                        i.putExtra("doc_photo", doc_photo);
+//                        i.putExtra("doc_name", doc_name);
+//                        i.putExtra("doc_sp", doc_sp);
+//                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                        startActivity(i);
+//                    } else {
+//                        Notification();
+//                    }
+//                }
+//            } else {
+//                System.out.println("Patient Push Three------");
+//                System.out.println("Patient Push screen_status-----" + Model.screen_status);
+//
+//                if ((push_type).equals("30")) {
+//                    i = new Intent(this, Video_Calling_Activity.class);
+//                    i.putExtra("tv_cons_id", appt_id);
+//                    i.putExtra("doc_photo", doc_photo);
+//                    i.putExtra("doc_name", doc_name);
+//                    i.putExtra("doc_sp", doc_sp);
+//                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                    startActivity(i);
+//                } else {
+//                    Notification();
+//                }
+//            }
+//
+//        } catch (Exception e) {
+//            System.out.println("Push Exception------" + e.toString());
+//            e.printStackTrace();
+//        }
 
 
     }
@@ -248,6 +245,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Log.d(TAG, "Refreshed token: " + token);
             Log.e("Token",token+" ");
         Model.device_token=token;
+        SharedPreferences sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putString("device_token", token);
+        editor.apply();
         sendRegistrationToServer(token);
     }
 
@@ -308,9 +309,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Model.query_launch = "Pushnotification";
 
         } else if ((push_type).equals("30")) {
-            intent = new Intent(this, Consultation_View.class);
-            intent.putExtra("tv_cons_id", appt_id);
-            Model.query_launch = "PushNotificationService";
+//            intent = new Intent(this, Consultation_View.class);
+//            intent.putExtra("tv_cons_id", appt_id);
+//            Model.query_launch = "PushNotificationService";
 
         } else if ((push_type).equals("33")) {
             intent = new Intent(this, Inbox_view.class);
@@ -352,12 +353,15 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         } else if ((push_type).equals("29")) {
 
+            Log.e("push type",push_type+" ");
+            Log.e("selqid", Model.qid+" ");
+            Log.e("follouwupcode", Model.fcode+" ");
             intent = new Intent(this, HotlineChatViewActivity.class);
             intent.putExtra("follouwupcode", Model.fcode);
             intent.putExtra("selqid", Model.qid);
 
             Model.query_launch = "PushNotificationService";
-
+            startActivity(intent);
             System.out.println("PushNotification-------------- 29");
 
         } else if (push_type.equals("31")) {
@@ -471,7 +475,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         //Intent intent = new Intent(MyFirebaseMessagingService.this, AboutAppActivity.class);
         PendingIntent pi = PendingIntent.getActivity(MyFirebaseMessagingService.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         mBuilder.setContentIntent(pi);
-        mNotificationManager.notify((new Random().nextInt(9999 - 1000) + 1000), mBuilder.build());
+        mNotificationManager.notify((1), mBuilder.build());
 
         System.out.println("Notify END-----------------");
 

@@ -593,7 +593,7 @@ public class ConsultFragment extends ScrollViewFragment {
                         editor.putString(Login_Status, "0");
                         editor.apply();
                         //============================================================
-
+                        dialog.dismiss();
                         getActivity().finishAffinity();
                         Intent intent = new Intent(getActivity(), LoginActivity.class);
                         startActivity(intent);
@@ -604,7 +604,7 @@ public class ConsultFragment extends ScrollViewFragment {
                 } else {
 
                     try {
-
+                        dialog.dismiss();
                         cfee = docprofile_repose_jsonobj.getString("cfee");
                         qfee = docprofile_repose_jsonobj.getString("qfee");
                         docurl = docprofile_repose_jsonobj.getString("url");
@@ -615,6 +615,7 @@ public class ConsultFragment extends ScrollViewFragment {
 
                     } catch (Exception e) {
                         e.printStackTrace();
+                        dialog.dismiss();
                     }
                 }
 
@@ -623,9 +624,10 @@ public class ConsultFragment extends ScrollViewFragment {
 
             } catch (Exception e) {
                 e.printStackTrace();
+                dialog.dismiss();
             }
 
-            dialog.dismiss();
+//            dialog.dismiss();
         }
     }
 

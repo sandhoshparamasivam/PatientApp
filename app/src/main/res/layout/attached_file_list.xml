@@ -14,6 +14,7 @@
         android:background="@drawable/attached_file_list_bg"
         android:elevation="2dp"
         android:onClick="onClick"
+        android:gravity="center"
         android:orientation="horizontal"
         android:padding="8dp">
 
@@ -23,8 +24,9 @@
             android:id="@+id/file_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="center"
             android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
             android:src="@drawable/someone_button"
             />
 
@@ -45,11 +47,12 @@
             android:autoLink="none"
             android:layout_toEndOf="@+id/file_image"
             android:ellipsize="end"
+            android:visibility="visible"
             android:layout_marginStart="10dp"
             android:fontFamily="sans-serif-light"
             android:linksClickable="true"
             android:maxLines="2"
-            android:text="Does anxiety cause hand tremor and shoulder pain?"
+            android:text="Attachment"
             android:textColor="@color/black"
             android:textSize="13sp" />
 

@@ -9,7 +9,7 @@ import android.os.Bundle;
 
 import com.orane.icliniq.LoginActivity;
 import com.orane.icliniq.Model.Model;
-import com.orane.icliniq.zoom.Consultation_View;
+//import com.orane.icliniq.zoom.Consultation_View;
 
 import java.util.HashMap;
 
@@ -104,10 +104,10 @@ public class DeepLinkActivityVideoCons extends Activity {
                                 Model.kiss.set(properties);
                                 //--------------------Kissmetrics--------------------------
 
-                                intent = new Intent(this, Consultation_View.class);
-                                intent.putExtra("tv_cons_id", idval);
-                                Model.query_launch = "PushNotificationService";
-                                startActivity(intent);
+//                                intent = new Intent(this, Consultation_View.class);
+//                                intent.putExtra("tv_cons_id", idval);
+//                                Model.query_launch = "PushNotificationService";
+//                                startActivity(intent);
 
                             } else {
                                 System.out.println("Please Login the App------");

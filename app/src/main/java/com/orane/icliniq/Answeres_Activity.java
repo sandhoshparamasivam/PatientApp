@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -203,90 +202,90 @@ public class Answeres_Activity extends AppCompatActivity implements ObservableSc
             }
         });*/
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                System.out.println("position-----" + position);
-
-                btn_qview = view.findViewById(R.id.btn_qview);
-                btn_qedit = view.findViewById(R.id.btn_qedit);
-
-                TextView query = view.findViewById(R.id.tvquery);
-                final TextView qidval = view.findViewById(R.id.tv_qid);
-                TextView tvstatus = view.findViewById(R.id.tvstatus);
-                TextView tv_hlstatus = view.findViewById(R.id.tv_hlstatus);
-                TextView tv_docurl = view.findViewById(R.id.tv_docurl);
-
-                query_status = tvstatus.getText().toString();
-                qid = qidval.getText().toString();
-                hlstatus = tv_hlstatus.getText().toString();
-                doc_url = tv_docurl.getText().toString();
-
-                Model.querystatus = query_status;
-
-                System.out.println("query_status--------------" + query_status);
-                System.out.println("qid--------------" + qid);
-                System.out.println("hlstatus-----------" + hlstatus);
-                System.out.println("tv_docurl-----------" + doc_url);
-
-                if (hlstatus.equals("1")) {
-
-                    if (query_status.equals("Payment Pending")) {
-                        qid = (qidval.getText().toString());
-
-                        System.out.println("qid--------------" + qid);
-
-                        Intent i = new Intent(Answeres_Activity.this, QueryViewActivity.class);
-                        i.putExtra("qtype", "followup");
-                        i.putExtra("qid", (qidval.getText().toString()));
-                        startActivity(i);
-                        overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
-
-                    } else {
-                        Intent i = new Intent(Answeres_Activity.this, HotlineChatViewActivity.class);
-                        i.putExtra("Doctor_id", "");
-                        i.putExtra("selqid", qid);
-                        i.putExtra("docurl", doc_url);
-                        startActivity(i);
-                    }
-
-                } else {
-
-                    if (query_status.equals("Draft")) {
-
-                        Model.query_launch = "QueryActivity";
-                        Model.edit_query = query.getText().toString();
-
-                        qid = (qidval.getText().toString());
-
-                        System.out.println("qid--------------" + qid);
-                        System.out.println("edit_query--------------" + Model.edit_query);
-
-                        Intent i = new Intent(Answeres_Activity.this, QueryViewActivity.class);
-                        i.putExtra("qtype", "draft");
-                        i.putExtra("qid", (qidval.getText().toString()));
-                        startActivity(i);
-                        //finish();
-
-                    } else if (query_status.equals("Re-Post")) {
-                        Intent i = new Intent(Answeres_Activity.this, AskQuery1.class);
-                        i.putExtra("draft_qid", (qidval.getText().toString()));
-                        startActivity(i);
-                        //finish();
-                        overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
-
-                    } else {
-                        qid = (qidval.getText().toString());
-                        System.out.println("qid--------------" + qid);
-                        Intent i = new Intent(Answeres_Activity.this, QueryViewActivity.class);
-                        i.putExtra("qtype", "followup");
-                        i.putExtra("qid", (qidval.getText().toString()));
-                        startActivity(i);
-                        overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
-                    }
-                }
-            }
-        });
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                System.out.println("position-----" + position);
+//
+//                btn_qview = view.findViewById(R.id.btn_qview);
+//                btn_qedit = view.findViewById(R.id.btn_qedit);
+//
+//                TextView query = view.findViewById(R.id.tvquery);
+//                final TextView qidval = view.findViewById(R.id.tv_qid);
+//                TextView tvstatus = view.findViewById(R.id.tvstatus);
+//                TextView tv_hlstatus = view.findViewById(R.id.tv_hlstatus);
+//                TextView tv_docurl = view.findViewById(R.id.tv_docurl);
+//
+//                query_status = tvstatus.getText().toString();
+//                qid = qidval.getText().toString();
+//                hlstatus = tv_hlstatus.getText().toString();
+//                doc_url = tv_docurl.getText().toString();
+//
+//                Model.querystatus = query_status;
+//
+//                System.out.println("query_status--------------" + query_status);
+//                System.out.println("qid--------------" + qid);
+//                System.out.println("hlstatus-----------" + hlstatus);
+//                System.out.println("tv_docurl-----------" + doc_url);
+//
+//                if (hlstatus.equals("1")) {
+//
+//                    if (query_status.equals("Payment Pending")) {
+//                        qid = (qidval.getText().toString());
+//
+//                        System.out.println("qid--------------" + qid);
+//
+//                        Intent i = new Intent(Answeres_Activity.this, QueryViewActivity.class);
+//                        i.putExtra("qtype", "followup");
+//                        i.putExtra("qid", (qidval.getText().toString()));
+//                        startActivity(i);
+//                        overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+//
+//                    } else {
+//                        Intent i = new Intent(Answeres_Activity.this, HotlineChatViewActivity.class);
+//                        i.putExtra("Doctor_id", "");
+//                        i.putExtra("selqid", qid);
+//                        i.putExtra("docurl", doc_url);
+//                        startActivity(i);
+//                    }
+//
+//                } else {
+//
+//                    if (query_status.equals("Draft")) {
+//
+//                        Model.query_launch = "QueryActivity";
+//                        Model.edit_query = query.getText().toString();
+//
+//                        qid = (qidval.getText().toString());
+//
+//                        System.out.println("qid--------------" + qid);
+//                        System.out.println("edit_query--------------" + Model.edit_query);
+//
+//                        Intent i = new Intent(Answeres_Activity.this, QueryViewActivity.class);
+//                        i.putExtra("qtype", "draft");
+//                        i.putExtra("qid", (qidval.getText().toString()));
+//                        startActivity(i);
+//                        //finish();
+//
+//                    } else if (query_status.equals("Re-Post")) {
+//                        Intent i = new Intent(Answeres_Activity.this, AskQuery1.class);
+//                        i.putExtra("draft_qid", (qidval.getText().toString()));
+//                        startActivity(i);
+//                        //finish();
+//                        overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+//
+//                    } else {
+//                        qid = (qidval.getText().toString());
+//                        System.out.println("qid--------------" + qid);
+//                        Intent i = new Intent(Answeres_Activity.this, QueryViewActivity.class);
+//                        i.putExtra("qtype", "followup");
+//                        i.putExtra("qid", (qidval.getText().toString()));
+//                        startActivity(i);
+//                        overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+//                    }
+//                }
+//            }
+//        });
 
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
@@ -497,10 +496,7 @@ public class Answeres_Activity extends AppCompatActivity implements ObservableSc
 
                         objItem.setQid(jsonobj1.getString("id"));
                         objItem.setQuestion(jsonobj1.getString("question"));
-                        1. Noyyal Media - Coimbatore  : --- News Portal
-                        2. Tamil Planet - Like Hotstar
-                        3. Noyyal Express - Tamil Entertainment Channel
-                        4. Noyyal Food Factory - Cooking Channel
+
 
                         objItem.setStr_status(jsonobj1.getString("str_status"));
                         objItem.setStatus(jsonobj1.getString("status"));

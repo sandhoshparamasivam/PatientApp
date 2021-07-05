@@ -32,7 +32,7 @@ import com.orane.icliniq.Model.Model;
 import com.orane.icliniq.adapter.ConsRowAdapter;
 import com.orane.icliniq.network.JSONParser;
 import com.orane.icliniq.network.NetCheck;
-import com.orane.icliniq.zoom.Consultation_View;
+//import com.orane.icliniq.zoom.Consultation_View;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -140,10 +140,10 @@ public class ConsultationListActivity extends AppCompatActivity {
 
                 TextView tvid = (TextView) view.findViewById(R.id.tvid);
 
-                Intent intent = new Intent(ConsultationListActivity.this, Consultation_View.class);
-                intent.putExtra("tv_cons_id", (tvid.getText().toString()));
-                startActivity(intent);
-                overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+//                Intent intent = new Intent(ConsultationListActivity.this, Consultation_View.class);
+//                intent.putExtra("tv_cons_id", (tvid.getText().toString()));
+//                startActivity(intent);
+//                overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 
 /*                Intent i = new Intent(ConsultationListActivity.this, MeetingHomeActivity.class);
                 i.putExtra("cons_user_name","1234567898712345678987");

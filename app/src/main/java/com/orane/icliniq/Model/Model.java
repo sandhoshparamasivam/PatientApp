@@ -10,9 +10,9 @@ import java.io.File;
 
 public class Model {
 
-    public static String App_ver = "19.9.96";
-    public static String App_ver_slno = "120266";
-    public static String App_Rel = "3-JUNE-2021";
+    public static String App_ver = "19.9.97";
+    public static String App_ver_slno = "120267";
+    public static String App_Rel = "9-JUNE-2021";
 
     //public static String font_name = "fonts/NotoSans-Regular.ttf";
     public static String font_name = "fonts/OpenSans-Regular.ttf";
@@ -38,7 +38,7 @@ public class Model {
     public static FirebaseAnalytics mFirebaseAnalytics;
 
     public static String clinics, sayThankQueryFee_text,is_thank_payment_val,terms_isagree, device_token, vendor_name, agency_name, agency_val, doc_lang, treatment_skills, edit_query, doc_photo, doc_name, doc_sp, appt_id, meeting_id, docurl, screen_status, fcode, ftrack_show, cons_phno, sel_spec_code, query, speciality, photo_url, from, return_qid, local_file_url, mcode, mnum, str_status, first_query,
-            mobvalidate, ftrack_fee, login_status, kmid, isValid, password, name, id, status, browser_country, email, fee_q, fee_consult, fee_q_inr, fee_consult_inr, currency_symbol, currency_label, have_free_credit;
+            mobvalidate, ftrack_fee, login_status, kmid, isValid, password, name, id,userid, status, browser_country, email, fee_q, fee_consult, fee_q_inr, fee_consult_inr, currency_symbol, currency_label, have_free_credit;
     public static String qid = "";
     public static String dqid = "";
     public static String app_lang = "";
@@ -53,6 +53,7 @@ public class Model {
     public static String fule_full_path, sel_country_name, sel_country_code, cons_lang_code, cons_timezone_val, cons_select_date = "";
     public static String sel_timerange_code, cons_query, time_range, cons_date, cons_lang, cons_ccode, cons_number, cons_timezone;
 
+    public static String fileName;
     public static String ratting,prep_inv_id, prep_inv_fee, prep_inv_strfee, txn_id, askdrafttext, doctor_id, compmore, prevhist, curmedi, pastmedi, labtest;
     public static String attach_qid, chime_url,attach_status, attach_file_url, attach_filename, attach_id, inv_title, inv_desc, inv_fee, inv_walletfee, inv_btnconfirm, inv_browsercountry, invfeetot;
     public static JSONArray mydoctor, hotlinedocs, myconsultation, mybooking, myquery_aaray, doctor_aaray;

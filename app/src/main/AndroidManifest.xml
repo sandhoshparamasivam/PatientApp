@@ -28,6 +28,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeDarkActionBar"
         tools:replace="android:icon">
+        <activity android:name=".ImagePreviewAct"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".SevenDayChatActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -65,7 +67,9 @@
         <!-- </service> -->
         <service
             android:name=".MyFirebaseMessagingService"
-            android:stopWithTask="false">
+            android:stopWithTask="false"
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
