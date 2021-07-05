@@ -20,8 +20,8 @@ android {
         applicationId "com.orane.icliniq"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 120266
-        versionName "19.9.96"
+        versionCode 120267
+        versionName "19.9.97"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
 
@@ -78,9 +78,9 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-core:17.2.0'
     implementation 'com.google.firebase:firebase-messaging:20.0.0'
- 
-    implementation project(':mobilertc')
-    implementation project(':commonlib')
+//
+//    implementation project(':mobilertc')
+//    implementation project(':commonlib')
 
     //implementation 'com.github.ittianyu:BottomNavigationViewEx:1.2.4'
     implementation 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
