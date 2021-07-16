@@ -97,7 +97,7 @@ public class HotlineChatViewActivity extends AppCompatActivity {
     public final Handler handler = new Handler();
     public Timer timer;
     public TimerTask timerTask;
-    //public Handler handler;
+
 
     Timer myTimer;
     TextView attachfile;
